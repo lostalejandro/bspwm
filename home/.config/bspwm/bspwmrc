@@ -67,7 +67,7 @@ for i in ${files[@]}; do
    bspc rule -a $i desktop='^3' follow=on focus=on; done
 
 # 4 > code
-declare -a code=(Geany code-oss)
+declare -a code=(Geany code-oss Mousepad VSCodium)
 for i in ${code[@]}; do
    bspc rule -a $i desktop='^4' follow=on focus=on; done
 
@@ -91,7 +91,7 @@ for i in ${media[@]}; do
 # 8 > settings
 bspc rule -a 'VirtualBox Manager' desktop='^8' follow=on focus=on
 bspc rule -a GParted desktop='^8' follow=on focus=on
-bspc rule -a gnome-software desktop='^8' follow=on focus=on
+bspc rule -a 'Software' desktop='^8' follow=on focus=on
 declare -a settings=(Lxappearance Lxtask Lxrandr Arandr \
 System-config-printer.py Pavucontrol Exo-helper-1 \
 Xfce4-power-manager-settings)

@@ -39,26 +39,14 @@ ctrl + alt + {m,v,r,h,n,c,p}
 	alacritty -e {cmatrix,nvim,ranger,htop,neofetch,cava,ncmpcpp}
 
 # Color Picker
-super + l
-	color-gpick
+super + Insert
+	~/.config/bspwm/scripts/bin/color-gpick
 
 # Lockscreen
 ctrl + alt + l
     bsplock
 
 ##---------- System Keys ----------##
-
-## Take a screenshot
-#shift + Print
-#	scrot '%Y-%m-%d_%H%M%S_scrot.png' -e 'mv $f ~/Imágenes/Capturas/' && notify-send "Captura de pantalla exitosa."
-#	
-## Take a screenshot of an area
-#Print
-#	scrot -s -f '%Y-%m-%d_%H%M%S_scrot.png' -e 'mv $f ~/Imágenes/Capturas/' && notify-send "Captura de pantalla exitosa."
-#	
-## Take screenshot of active window
-#ctrl + Print
-#	scrot -u '%Y-%m-%d_%H%M%S_scrot.png' -e 'mv $f ~/Imágenes/Capturas/' && notify-send "Captura de pantalla exitosa."
 
 # Brighness control
 XF86MonBrightness{Up,Down}
@@ -136,8 +124,8 @@ super + {Tab,grave}
 	bspc {node,desktop} -f last
 
 # Send focused window to another workspace
-super + {_,shift + }{1-8}
-	bspc {desktop -f,node -d} '^{1-8}'
+super + {_,shift + }{1-9}
+	bspc {desktop -f,node -d} '^{1-9}'
 
 # Expanding windows
 super + control + {Left,Right,Up,Down}
