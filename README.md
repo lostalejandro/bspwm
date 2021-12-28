@@ -11,7 +11,7 @@
 
 # Sobre
 
-Este script consiste en instalar un Gestor de Ventanas   [bspwm](https://github.com/baskerville/bspwm) junto con [polybar](https://github.com/polybar/polybar) y [rofi](https://github.com/davatorium/rofi).
+Esse script possui a intenção de instalar o gerenciador de janelas [bspwm](https://github.com/baskerville/bspwm) em conjunto com [polybar](https://github.com/polybar/polybar) e [rofi](https://github.com/davatorium/rofi).
 
 <hr>
 
