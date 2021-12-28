@@ -1,62 +1,49 @@
 <p align="center">
-<img width="800px" src="https://user-images.githubusercontent.com/84329097/143779279-c96cc289-a9aa-4a37-bd7b-1edd30d8fd83.png" align="center" alt="white" /><br><br>
  
 [//]: <> (site para ícones: https://shields.io/ )
  
 <img alt="Maintained" src="https://img.shields.io/badge/Maintained%3F-Yes-green">
-<img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/thespation/dpux_bspwm">
-<img alt="GitHub repo size" src="https://img.shields.io/github/repo-size/thespation/dpux_bspwm">
-<img alt="Bitbucket open issues" src="https://img.shields.io/bitbucket/issues/thespation/dpux_bspwm">
-<img alt="GitHub commit activity (branch)" src="https://img.shields.io/github/commit-activity/y/thespation/dpux_bspwm">
-<a href="#"><img src="https://badges.pufler.dev/visits/thespation/dpux_bspwm">
-
- <p align="center">
- <a href="https://github.com/thespation/dpux_bspwm#sobre" target="_blank"><img alt="undefined" src="https://img.shields.io/badge/-Sobre-blue"></a>
- <a href="https://github.com/thespation/dpux_bspwm#instalação" target="_blank"><img alt="undefined" src="https://img.shields.io/badge/-Instalação-blue"></a>
- <a href="https://github.com/thespation/dpux_bspwm#temas-e-customizações-disponíveis" target="_blank"><img alt="undefined" src="https://img.shields.io/badge/-Temas e customizações disponíveis-blue"></a>
-<a href="https://github.com/thespation/dpux_bspwm#dependências" target="_blank"><img alt="undefined" src="https://img.shields.io/badge/-Dependências-blue"></a>
- <a href="https://github.com/thespation/dpux_bspwm#o-que-será-instalado" target="_blank"><img alt="undefined" src="https://img.shields.io/badge/-O que será instalado-blue"></a>
- <a href="https://github.com/thespation/dpux_bspwm#teclas-de-atalhos" target="_blank"><img alt="undefined" src="https://img.shields.io/badge/-Teclas de atalhos-blue"></a>
-  <a href="https://github.com/thespation/dpux_bspwm#dicas" target="_blank"><img alt="undefined" src="https://img.shields.io/badge/-Dicas-blue"></a>
- <a href="https://github.com/thespation/dpux_bspwm#créditos" target="_blank"><img alt="undefined" src="https://img.shields.io/badge/-Créditos-blue"></a>
-</p>
-
+<img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/lostalejandro/bspwm">
+<img alt="GitHub repo size" src="https://img.shields.io/github/repo-size/lostalejandro/bspwm">
+<img alt="Bitbucket open issues" src="https://img.shields.io/bitbucket/issues/lostalejandro/bspwm">
+<img alt="GitHub commit activity (branch)" src="https://img.shields.io/github/commit-activity/y/lostalejandro/bspwm">
+<a href="#"><img src="https://badges.pufler.dev/visits/lostalejandro/bspwm">
 
 # Sobre
 
-Esse script possui a intenção de instalar o gerenciador de janelas [bspwm](https://github.com/baskerville/bspwm) em conjunto com [polybar](https://github.com/polybar/polybar) e [rofi](https://github.com/davatorium/rofi).
+Este script consiste en instalar un Gestor de Ventanas [bspwm](https://github.com/baskerville/bspwm) junto con [polybar](https://github.com/polybar/polybar) y [rofi](https://github.com/davatorium/rofi).
 
 <hr>
 
-# Instalação
+# Instalación
 
 ## Base Debian (Debian, Pop!_OS, Ubuntu e Xubuntu)
-Em seu terminal, rode o comando abaixo para começar a instalação:
+En su terminal, ejecute el comando de abajo para iniciar la instalación:
 ```bash
-sudo apt install git inxi -y && cd /tmp && git clone https://github.com/thespation/dpux_bspwm && chmod 755 dpux_bspwm/* -R && cd dpux_bspwm/ && ./instalar.sh
+sudo apt install git inxi -y && cd /tmp && git clone https://github.com/lostalejandro/bspwm && chmod 755 bspwm/* -R && cd bspwm/ && ./instalar.sh
 ```
  
 ## Fedora
-Em seu terminal, rode o comando abaixo para começar a instalação:
+En su terminal, ejecute el comando de abajo para iniciar la instalación:
 ```bash
-sudo dnf install -y git inxi && cd /tmp && git clone https://github.com/thespation/dpux_bspwm && chmod 755 dpux_bspwm/* -R && cd dpux_bspwm/ && ./instalar.sh
+sudo dnf install -y git inxi && cd /tmp && git clone https://github.com/lostalejandro/bspwm && chmod 755 bspwm/* -R && cd bspwm/ && ./instalar.sh
 ```
 
 <hr>
 
-# Sistemas suportados
-Para que o script rode corretamente, é necessário ter o sistema, versão e DE abaixo:
+# Sistemas soportados
+Para que el script se ejecute correctamente, es necesario tener sistema, versión y DE mostrados abajo:
 
 <table align=center border="1">
     <tr>
         <th>Sistema</td>
-        <th>Versão</td>
+        <th>Versión</td>
         <th>DE</td>
     </tr>
     <tr>
         <td align="center"valign="center">Debian</td>
-        <td align="center"valign="center">Bullseye ou Bookworm</td>
-        <td align="center"valign="center">Xfce ou GNOME</td>
+        <td align="center"valign="center">Bullseye o Bookworm</td>
+        <td align="center"valign="center">Xfce o GNOME</td>
     </tr>
     <tr>
         <td align="center"valign="center">Fedora</td>
@@ -77,101 +64,98 @@ Para que o script rode corretamente, é necessário ter o sistema, versão e DE 
         <td align="center"valign="center">Xfce</td>
     </tr>
 </table>
-  
-Caso queira executar por conta própria ou modificar na intenção de moldar conforme necessário para seu sistema, fique à vontade, porém não tem como me responsabilizar por isso.<br><br>
-*Foi realizado o teste no Fedora v35, porém deve funcionar normalmente na v34.
-<hr>
 
-# Temas e customizações disponíveis
+# Temas y diseños disponibles
 
-## Temas para o BSPWM
-Utilize o atalho <kbd>Ctrl</kbd> + <kbd>alt</kbd> + <kbd>t</kbd> para seleiconar o tema desejado:<br>
+## Temas para BSPWM
+Utilize el atajo <kbd>Super</kbd> + <kbd>t</kbd> para seleccionar el tema deseado:<br>
 
 ![temas](https://user-images.githubusercontent.com/84329097/141335499-8e8b4683-a1d0-4727-9c66-58f3e452f491.gif)
 
 ##
 
-## Temas do menu rofi
+## Temas del menu rofi
  
-Podendo mudar a cor de acordo com o tema selecionado:
+Pudiendo cambiar el color de acuerdo con el tema seleccionado:
 
 ![rofi](https://user-images.githubusercontent.com/84329097/141335969-4cc5440c-342c-431b-bd89-693efd947a4a.gif)
 
 <hr>
 
-## Troca de tema para LightDM
+## Cambio de tema para LightDM
 
-Caso esse script seja rodado no Debian Xfce ou no Xubuntu, será modificado o tema do gestor de login, ficando:
+En caso de que el script sea ejecutado en Debian Xfce o en Xubuntu, será modificado el tema del gestor de inicio, quedando así:
 
 ![01](https://user-images.githubusercontent.com/84329097/141336377-58b7b39c-62a2-430d-aad8-c7388b7ae75d.png)
 
-Observação: o Xubuntu é configurado para usar o papel de parede da sessão no LightDM, com isso usará o papel de parede da sessão.
+Observación: En Xubuntu está configurado para usar el Wallpaper de la sesión en LightDM, con esto usará el Wallpaper de la sesión.
 
 <hr>
 
-# Dependências
+# Dependencias
 
-Para que seja realizada a instalação correta, é necessário ter instalado `inxi` em seu sistema, assim como o `git`. Caso a instalação seja realizada pelo comando apresentado acima, será instalado automaticamente.
+Para que sea realizada una correcta instalación, es necesario tener instalado `inxi` en su sistema, así como también `git`. En caso de que la instalación sea realizada con el comando presentado arriba, todo será instalado automáticamente.
 
 <hr>
 
-# O que será instalado
-* Pacotes comuns a todas as distros:
+# Lo que será instalado
+* Paquetes comúnes a todas las distros:
 
    > bspwm, sxhkd, rofi, compton, polybar, dunst, [ksuperkey](https://github.com/hanschen/ksuperkey), neofetch, htop, feh, lxappearance, geany, dmenu, nm-tray, xfconf, xsettingsd, xfce4-power-manager, zenity, git.
 
-* Pacotes destinados as distros xfce:
+* Paquetes destinados a las distros xfce:
 
-   > thunar-archive-plugin, catfish, baobab, meld, language-selector-gnome* (somente para o Xubuntu).
+   > thunar-archive-plugin, catfish, baobab, meld, language-selector-gnome* (solo para Xubuntu).
 
-* Pacotes destinados as distros GNOME:
+* Paquetes destinados a las distros GNOME:
 
    > mate-polkit, i3lock.
 
 <hr>
 
-# Teclas de atalhos</h2>
-Para utilização do *bspwm* vai notar que muitas das vezes o teclado é o nosso melhor amigo, para isso precisamos aprender alguns atalhos interessantes para nossa utilização.
+# Atajos de teclado </h2>
+Para utilizar *bspwm* notará que muchas veces el teclado es nuestro mejor amigo, por eso, debemos aprender algunos atajos interesantes para darle un mejor uso.
 
-Caso queira personalizar algum, acrescentar ou remover, pode ser realizado editando o arquivo: `~/.config/sxhkd/sxhkdrc`.
+En caso de que quiera personalizar alguno, modifique o elimine las líneas que usted prefiera, puede ser realizado editando el archivo: `~/.config/sxhkd/sxhkdrc`.
 
-Seguem os atalho já configurados:
-<br>(Legenda: <kbd> W</kbd> = Tecla Windows)
+Atajos y a configurados:
+<br>(Nota: <kbd> Super</kbd> = Tecla Windows)
 
 ## Menus
-<kbd>W</kbd> ou <kbd>alt</kbd> + <kbd>F1</kbd> - Menu de aplicativos <br>
-<kbd>W</kbd> + <kbd>w</kbd> - Mostra programas abertos (tecla Windows mais a tecla "w") <br>
-<kbd>W</kbd> + <kbd>x</kbd> - Menu com opções de desligamento <br>
-<kbd>W</kbd> + <kbd>d</kbd> - dmenu (menu alternativo ao Rofi) <br>
-<kbd>Ctrl</kbd> + <kbd>alt</kbd> + <kbd>t</kbd> - Seletor de tema <br>
+<kbd>Super</kbd> o <kbd>Alt</kbd> + <kbd>F1</kbd> - Menu de aplicaciones <br>
+<kbd>Super</kbd> + <kbd>F1</kbd> - Menu de ejecutables <br>
+<kbd>Super</kbd> + <kbd>w</kbd> - Muestr losa programas abiertos <br>
+<kbd>Super</kbd> + <kbd>x</kbd> - Menu de opciones de apagado <br>
+<kbd>Super</kbd> + <kbd>t</kbd> - Selector del tema <br>
 
 ## Comandos internos
-<kbd>W</kbd> + <kbd>esc</kbd> - Recarregar atalhos (arquivos sxhkd)<br>
-<kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>r</kbd>- Recarregar BSPWM<br>
+<kbd>Super</kbd> + <kbd>esc</kbd> - Recargar atajos de teclado (archivo sxhkdrc)<br>
+<kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>r</kbd>- Reiniciar BSPWM<br>
 
-## Aplicativos
-<kbd>W</kbd> + <kbd>Enter</kbd> - Terminal <br>
-<kbd>W</kbd> + <kbd>Shift</kbd> + <kbd>t</kbd> - Gestor de arquivos (thunar ou nautilus)<br>
-<kbd>W</kbd> + <kbd>Shift</kbd> + <kbd>w</kbd> - Firefox<br>
-<kbd>W</kbd> + <kbd>Shift</kbd> + <kbd>e</kbd> - Geany<br>
-<kbd>W</kbd> + <kbd>c</kbd> - Fechar janela em foco <br>
+## Aplicaciones
+<kbd>Super</kbd> + <kbd>Enter</kbd> - Terminal Alacritty <br>
+<kbd>Super</kbd> + <kbd>e</kbd> - Gestor de archivos (thunar)<br>
+<kbd>Super</kbd> + <kbd>b</kbd> - Firefox<br>
+<kbd>Super</kbd> + <kbd>g</kbd> - Geany<br>
+<kbd>Super</kbd> + <kbd>c</kbd> - Cerrar Ventana enfocada <br>
 
-## Áreas de trabalho
-<kbd>W</kbd> + <kbd>1-8</kbd> - Troca de área de trabalho <br>
-<kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>←/→</kbd> - Troca de área de trabalho para a ao lado<br>
+## Áreas de trabajo
+<kbd>Super</kbd> + <kbd>1-9</kbd> - Cambio del área de trabajo <br>
+<kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>←/→</kbd> - Cambio del área de trabajo hacia un lado<br>
 
-## Gerenciar Janelas
-<kbd>W</kbd> + <kbd>Shift</kbd> + <kbd>1-8</kbd> - Envia app em foco para a área de trabalho desejada <br>
-<kbd>W</kbd> + <kbd>Barra de espaço</kbd> - troca entre modo tiling / floating <br>
-<kbd>W</kbd> + <kbd>F</kbd> - modo uma janela em tela cheia <br>
-<kbd>W</kbd> + <kbd>H/V/Q</kbd> - Prepara a divisão do app na Horizontal, Vertical ou Cancela <br>
-<kbd>W</kbd> + <kbd>TAB</kbd> - Volta para último app aberto <br>
-<kbd>W</kbd> + <kbd>Ctrl</kbd> + <kbd>←/→/↑ /↓ </kbd> - Expande a janela em foco <br>
-<kbd>W</kbd> + <kbd>Alt</kbd> + <kbd>←/→/↑ /↓</kbd> - Diminuir a janela em foco <br>
+## Administrar ventanas
+<kbd>Super</kbd> + <kbd>Shift</kbd> + <kbd>1-9</kbd> - Envia la ventana enfocada al área de trabajo deseada <br>
+<kbd>Super</kbd> + <kbd>Barra espaciadora</kbd> - Cambio entre el modo tiling / floating <br>
+<kbd>Super</kbd> + <kbd>Click Izq</kbd> - Permite mover la ventana enfocada en modo tiling / flotaing  <br>
+<kbd>Super</kbd> + <kbd>F</kbd> - Coloca la ventana enfocada en Modo ventana completa <br>
+<kbd>Super</kbd> + <kbd>H/V/Q</kbd> - Prepara a la división de la ventana en Horizontal, Vertical o Cancela <br>
+<kbd>Super</kbd> + <kbd>TAB</kbd> - Vuelve para la última ventana abierta <br>
+<kbd>Super</kbd> + <kbd>Ctrl</kbd> + <kbd>←/→/↑ /↓ </kbd> - Expande la ventana enfocada <br>
+<kbd>Super</kbd> + <kbd>Alt</kbd> + <kbd>←/→/↑ /↓</kbd> - Disminuye la ventana enfocada <br>
 
 <hr>
 
-# Dicas
+# Consejos
 
 * [Como configurar a resolução e rotação das telas no BSPWM](https://plus.diolinux.com.br/t/como-configurar-a-resolucao-e-rotacao-das-telas-no-bspwm/37957)
 * [Como configurar BSPWM e polybar para mais de um monitor](https://plus.diolinux.com.br/t/como-configurar-bspwm-e-polybar-para-mais-de-um-monitor/35201)
@@ -179,5 +163,5 @@ Seguem os atalho já configurados:
 <hr>
 
 # Créditos
-Tanto os menus, polybar, temas e configurações para bspwm quanto sxhkd foram elaborados pelo [Aditya Shakya](https://github.com/adi1090x) que disponibilizou em seu Github ([polybar](https://github.com/adi1090x/polybar-themes) e [rofi](https://github.com/adi1090x/rofi)).
+Tanto los menus, polybar, temas y configuraciones para bspwm, así como también para sxhkd fueron elaborados por [Aditya Shakya](https://github.com/adi1090x) que disponibilizó en su Github ([polybar](https://github.com/adi1090x/polybar-themes) y [rofi](https://github.com/adi1090x/rofi)), a [William Santos](https://github.com/thespation/) quien creó este excelente script. Y a mi persona [Alejandro Fermín](https://github.com/lostalejandro/) por realizar configuraciones personalizadas, adaptar el script a más distros y por traducir al español.
 
