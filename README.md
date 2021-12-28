@@ -13,7 +13,7 @@
 
 # Instalación
 
-## Base Debian (Debian, Pop!_OS, Ubuntu e Xubuntu)
+## Base Debian (Debian, Pop!_OS, Ubuntu y Xubuntu)
 En su terminal, ejecute el comando de abajo para iniciar la instalación:
 ```bash
 sudo apt install git inxi -y && cd /tmp && git clone https://github.com/lostalejandro/bspwm && chmod 755 bspwm/* -R && cd bspwm/ && ./instalar.sh
