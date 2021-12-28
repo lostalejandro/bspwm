@@ -1,0 +1,158 @@
+## Copyright (C) 2020-2021 Aditya Shakya <adi1090x@gmail.com>
+## Everyone is permitted to copy and distribute copies of this file under GNU-GPL3
+
+##---------- Keybindings for bspwm ----------##
+
+# Terminal (alacritty)
+super + Return
+	alacritty
+
+##---------- Rofi Launcher & Menus ----------##
+
+# Rofi App Launcher
+alt + F1
+	sh ~/.config/bspwm/rofi/bin/launcher
+
+# dmenu
+super + F1
+	dmenu_run -l 10 -nb '#323f4e' -nf '#cfd8dc' -sb '#cfd8dc' -sf '#263238' -fn 'Source Code Pro Medium-9' -p ' '
+
+# Rofi Themes
+super + t
+	sh ~/.config/bspwm/rofi/bin/themes
+
+# Rofi Menus/Applets
+super + {w,x,r,p,n}
+	sh ~/.config/bspwm/rofi/bin/{windows,powermenu,asroot,mpd,network}
+	
+Print
+	sh ~/.config/bspwm/rofi/bin/screenshot
+
+##---------- Applications ----------##
+
+# Launch Apps
+super + {e,b,m,g}
+	{thunar,firefox,thunderbird,geany}
+
+# Terminal Apps
+ctrl + alt + {m,v,r,h,n,c,p}
+	alacritty -e {cmatrix,nvim,ranger,htop,neofetch,cava,ncmpcpp}
+
+# Color Picker
+super + l
+	color-gpick
+
+# Lockscreen
+ctrl + alt + l
+    bsplock
+
+##---------- System Keys ----------##
+
+## Take a screenshot
+#shift + Print
+#	scrot '%Y-%m-%d_%H%M%S_scrot.png' -e 'mv $f ~/Imágenes/Capturas/' && notify-send "Captura de pantalla exitosa."
+#	
+## Take a screenshot of an area
+#Print
+#	scrot -s -f '%Y-%m-%d_%H%M%S_scrot.png' -e 'mv $f ~/Imágenes/Capturas/' && notify-send "Captura de pantalla exitosa."
+#	
+## Take screenshot of active window
+#ctrl + Print
+#	scrot -u '%Y-%m-%d_%H%M%S_scrot.png' -e 'mv $f ~/Imágenes/Capturas/' && notify-send "Captura de pantalla exitosa."
+
+# Brighness control
+XF86MonBrightness{Up,Down}
+	brightness{ --inc, --dec}
+	
+# Volume control
+XF86Audio{RaiseVolume,LowerVolume}
+	volume{ --inc, --dec}
+
+XF86AudioMute
+	volume --toggle
+	
+# Music control
+XF86Audio{Next,Prev,Play,Stop}
+	mpc {next,prev,toggle,stop}
+
+##---------- Bspwm ----------##
+
+# Close App
+super + {_,shift + }c
+	bspc node -{c,k}
+
+# Reload Keybindings
+super + Escape
+	pkill -USR1 -x sxhkd
+
+# kill window
+ctrl + alt + Escape
+    xkill
+
+# Quit/Restart bspwm
+ctrl + shift + {q,r}
+	bspc {quit,wm -r}
+	
+# Split horizontal, vertical or cancel
+super + {h,v,q}
+	bspc node -p {east,south,cancel}
+
+# Preselect the ratio
+super + ctrl + {1-9}
+	bspc node -o 0.{1-9}
+
+# Fullscreen or Monocle
+super + f
+	bspc desktop -l next
+#    bspc node -t "~"fullscreen
+
+# Toggle beetwen floating & tiled
+super + space
+    bspc node -t "~"{floating,tiled}
+
+# Pseudo Tiled & tiled mode
+super + shift + space
+#super + {p,t}
+    bspc node -t "~"{pseudo_tiled,tiled}
+
+# Set the node flags
+super + ctrl + {m,x,y,z}
+	bspc node -g {marked,locked,sticky,private}
+
+# Send the window to another edge of the screen
+super + {_,shift + }{Left,Down,Up,Right}
+	bspc node -{f,s} {west,south,north,east}
+
+# Change focus to next window, including floating window
+alt + {_,shift + }Tab
+	bspc node -f {next.local,prev.local}
+
+# Switch workspace
+ctrl + alt + {Left,Right}
+	bspc desktop -f {prev.local,next.local}
+
+# Switch to last opened workspace
+super + {Tab,grave}
+	bspc {node,desktop} -f last
+
+# Send focused window to another workspace
+super + {_,shift + }{1-8}
+	bspc {desktop -f,node -d} '^{1-8}'
+
+# Expanding windows
+super + control + {Left,Right,Up,Down}
+	bspc node -z {left -20 0,right 20 0,top 0 -20,bottom 0 20}
+	
+## Shrinking windows
+super + alt + {Left,Right,Up,Down}
+	bspc node -z {left 20 0,right -20 0,top 0 20,bottom 0 -20}
+	
+## Move floating windows
+alt + shift + {Left,Down,Up,Right}
+	bspc node -v {-20 0,0 20,0 -20,20 0}
+
+# Hide/Unhide Window
+super + shift + i
+	winmask		
+
+##---------- EOF ----------##
