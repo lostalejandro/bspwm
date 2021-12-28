@@ -9,10 +9,6 @@
 <img alt="GitHub commit activity (branch)" src="https://img.shields.io/github/commit-activity/y/lostalejandro/bspwm">
 <a href="#"><img src="https://badges.pufler.dev/visits/lostalejandro/bspwm">
 
-# Sobre
-
-Esse script possui a intenção de instalar o gerenciador de janelas [bspwm](https://github.com/baskerville/bspwm) em conjunto com [polybar](https://github.com/polybar/polybar) e [rofi](https://github.com/davatorium/rofi).
-
 <hr>
 
 # Instalación
