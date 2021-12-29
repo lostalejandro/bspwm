@@ -129,7 +129,7 @@ for i in ${settings[@]}; do
 # special rules
 bspc rule -a Conky state=floating manage=off
 bspc rule -a stalonetray state=floating manage=off
-declare -a floating=(Calculadora Viewnior feh  authy)
+declare -a floating=(Gnome-calculator Viewnior feh authy)
 for i in ${floating[@]}; do
    bspc rule -a $i state=floating follow=on focus=on; done
 
