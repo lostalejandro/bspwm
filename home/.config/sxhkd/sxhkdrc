@@ -3,9 +3,9 @@
 
 ##---------- Keybindings for bspwm ----------##
 
-# Terminal (alacritty)
-super + Return
-	alacritty
+# Terminal or Fullscreen Terminal
+super + {_,shift + } Return
+	{alacritty,~/.config/bspwm/scripts/bin/furminal}
 
 ##---------- Rofi Launcher & Menus ----------##
 
@@ -32,7 +32,7 @@ Print
 
 # Launch Apps
 super + {e,b,m,g}
-	{thunar,firefox,thunderbird,geany}
+	{thunar,chromium,thunderbird,geany}
 
 # Terminal Apps
 ctrl + alt + {m,v,r,h,n,c,p}
@@ -43,21 +43,21 @@ super + Insert
 	~/.config/bspwm/scripts/bin/color-gpick
 
 # Lockscreen
-ctrl + alt + l
-    bsplock
+super +  F4
+   ~/.config/bspwm/scripts/bin/xflock4
 
 ##---------- System Keys ----------##
 
 # Brighness control
 XF86MonBrightness{Up,Down}
-	brightness{ --inc, --dec}
+	~/.config/bspwm/scripts/bin/brightness{ --inc, --dec}
 	
 # Volume control
 XF86Audio{RaiseVolume,LowerVolume}
-	volume{ --inc, --dec}
+	~/.config/bspwm/scripts/bin/volume{ --inc, --dec}
 
 XF86AudioMute
-	volume --toggle
+	~/.config/bspwm/scripts/bin/volume --toggle
 	
 # Music control
 XF86Audio{Next,Prev,Play,Stop}
@@ -66,14 +66,18 @@ XF86Audio{Next,Prev,Play,Stop}
 ##---------- Bspwm ----------##
 
 # Close App
-super + {_,shift + }c
-	bspc node -{c,k}
+super + c
+	bspc node -c
+
+# Kill App
+alt + F4
+	bspc node -k
 
 # Reload Keybindings
 super + Escape
 	pkill -USR1 -x sxhkd
 
-# kill window
+# Kill a window using left click
 ctrl + alt + Escape
     xkill
 
@@ -89,10 +93,9 @@ super + {h,v,q}
 super + ctrl + {1-9}
 	bspc node -o 0.{1-9}
 
-# Fullscreen or Monocle
-super + f
-	bspc desktop -l next
-#    bspc node -t "~"fullscreen
+# Fullscreen, Max Fullscreen or Monocle
+super + {f,F11}
+    bspc {desktop -l next,node -t "~"fullscreen}
 
 # Toggle beetwen floating & tiled
 super + space
@@ -100,7 +103,6 @@ super + space
 
 # Pseudo Tiled & tiled mode
 super + shift + space
-#super + {p,t}
     bspc node -t "~"{pseudo_tiled,tiled}
 
 # Set the node flags

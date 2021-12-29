@@ -27,7 +27,7 @@ workspaces() {
 	name=1
 	for monitor in `bspc query -M`; do
 		#bspc monitor ${monitor} -n "$name" -d 'I' 'II' 'III' 'IV' 'V' 'VI' 'VII' 'VIII' 'IX'
-		bspc monitor ${monitor} -n "$name" -d '' '' '' '' '' '' '' '' ''
+		bspc monitor ${monitor} -n "$name" -d '' '' '' '' '' '' '' '' ''
 		let name++
 	done
 }
@@ -56,71 +56,87 @@ bspc rule -r *:*
 
 # 1 > terminal
 bspc rule -a Alacritty desktop='^1' follow=on focus=on
+declare -a term=()
+for i in ${term[@]}; do
+   bspc rule -a $i desktop='^1' state=floating follow=on focus=on; done
 
 # 2 > web
 bspc rule -a Firefox-esr desktop='^2' follow=on focus=on
 bspc rule -a Chromium desktop='^2' follow=on focus=on
+declare -a web=()
+for i in ${web[@]}; do
+   bspc rule -a $i desktop='^2' state=floating follow=on focus=on; done
 
 # 3 > files
-declare -a files=(Pcmanfm Thunar Nautilus qBittorrent)
+bspc rule -a Thunar desktop='^3' follow=on focus=on
+declare -a files=()
 for i in ${files[@]}; do
-   bspc rule -a $i desktop='^3' follow=on focus=on; done
+   bspc rule -a $i desktop='^3' state=floating follow=on focus=on; done
 
 # 4 > code
-declare -a code=(Geany code-oss Mousepad VSCodium)
+bspc rule -a Geany desktop='^4' follow=on focus=on
+bspc rule -a VSCodium desktop='^4' follow=on focus=on
+bspc rule -a Mousepad desktop='^4' follow=on focus=on
+declare -a code=()
 for i in ${code[@]}; do
-   bspc rule -a $i desktop='^4' follow=on focus=on; done
+   bspc rule -a $i desktop='^4' state=floating follow=on focus=on; done
 
 # 5 > office and docs
-declare -a office=(Gucharmap Atril Evince \
-libreoffice-writer libreoffice-calc libreoffice-impress \
-libreoffice-startcenter libreoffice Soffice *:libreofficedev *:soffice)
+bspc rule -a libreoffice-writer desktop='^5' follow=on focus=on
+bspc rule -a libreoffice-calc desktop='^5' follow=on focus=on
+bspc rule -a libreoffice-impress desktop='^5' follow=on focus=on
+bspc rule -a libreoffice-startcenter desktop='^5' follow=on focus=on
+bspc rule -a libreoffice Soffice desktop='^5' follow=on focus=on
+bspc rule -a *:libreofficedev desktop='^5' follow=on focus=on
+bspc rule -a *:soffice desktop='^5' follow=on focus=on
+declare -a office=()
 for i in ${office[@]}; do
-   bspc rule -a $i desktop='^5' follow=on focus=on; done
+   bspc rule -a $i desktop='^5' state=floating follow=on focus=on; done
 
 # 6 > Communication
-declare -a comm=(Thunderbird TelegramDesktop Hexchat)
+bspc rule -a Thunderbird desktop='^6' follow=on focus=on
+bspc rule -a TelegramDesktop desktop='^6' follow=on focus=on
+bspc rule -a whatsdesk desktop='^6' follow=on focus=on
+bspc rule -a Hexchat desktop='^6' follow=on focus=on
+declare -a comm=()
 for i in ${comm[@]}; do
-   bspc rule -a $i desktop='^6' follow=on focus=on; done
+   bspc rule -a $i desktop='^6' state=floating follow=on focus=on; done
 
 # 7 > media
-declare -a media=(Audacity Music Lxmusic Inkscape Gimp-2.10 obs Hypnotix.py)
+bspc rule -a Inkscape desktop='^7' follow=on focus=on
+bspc rule -a Gimp-2.10 desktop='^7' follow=on focus=on
+declare -a media=(Audacity obs Hypnotix.py)
 for i in ${media[@]}; do
    bspc rule -a $i desktop='^7' state=floating follow=on focus=on; done
-
-# 8 > settings
-bspc rule -a 'VirtualBox Manager' desktop='^8' follow=on focus=on
-bspc rule -a GParted desktop='^8' follow=on focus=on
-bspc rule -a 'Software' desktop='^8' follow=on focus=on
-declare -a settings=(Lxappearance Lxtask Lxrandr Arandr \
-System-config-printer.py Pavucontrol Exo-helper-1 \
-Xfce4-power-manager-settings)
-for i in ${settings[@]}; do
-   bspc rule -a $i desktop='^8' state=floating follow=on focus=on; done
    
-# 9 > games
-bspc rule -a Steam desktop='^9' follow=on focus=on
-bspc rule -a discord desktop='^9' follow=on focus=on
-declare -a games=(valheim \
-stranded \
-snowrunner)
+# 8 > games
+bspc rule -a valheim desktop='^8' follow=on focus=on
+bspc rule -a snowrunner desktop='^8' follow=on focus=on
+declare -a games=(discord Steam)
 for i in ${games[@]}; do
+   bspc rule -a $i desktop='^8' state=floating follow=on focus=on; done
+
+# 9 > settings
+bspc rule -a 'VirtualBox Manager' desktop='^9' follow=on focus=on
+bspc rule -a GParted desktop='^9' follow=on focus=on
+bspc rule -a 'Software' desktop='^9' follow=on focus=on
+declare -a settings=(Lxappearance Arandr Pavucontrol \
+Xfce4-power-manager-settings Exo-helper-1 \
+Nm-connection-editor)
+for i in ${settings[@]}; do
    bspc rule -a $i desktop='^9' state=floating follow=on focus=on; done
 
 # special rules
-declare -a floating=(Pcmanfm Onboard Yad 'Firefox:Places' gnome-calculator \
-Viewnior feh Nm-connection-editor authy)
-for i in ${floating[@]}; do
-   bspc rule -a $i state=floating follow=on focus=on; done
-
 bspc rule -a Conky state=floating manage=off
 bspc rule -a stalonetray state=floating manage=off
+declare -a floating=(Calculadora Viewnior feh  authy)
+for i in ${floating[@]}; do
+   bspc rule -a $i state=floating follow=on focus=on; done
 
 ## Autostart -------------------------------------------------#
 
 # Kill if already running
-killall -9 xsettingsd sxhkd dunst ksuperkey xfce4-power-manager
-sudo killall -9 mpd
+killall -9 xsettingsd sxhkd dunst ksuperkey xfce4-power-manager mpd
 
 # Lauch notification daemon
 dunst \

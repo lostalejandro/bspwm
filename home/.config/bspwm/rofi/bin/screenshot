@@ -20,17 +20,13 @@ inten=""
 
 # notify
 notify_user () {
-	if [[ -e "$dir/$file" ]]; then
-		dunstify -u low --replace=699 -i /usr/share/archcraft/icons/dunst/picture.png "Saved in $dir"
-	else
-		dunstify -u low --replace=699 -i /usr/share/archcraft/icons/dunst/picture.png "Screenshot Deleted."
-	fi
+		dunstify -u low --replace=699 -i /usr/share/icons/dunst/picture.png "Guardado en $dir."
 }
 
 # countdown
 countdown () {
 	for sec in `seq $1 -1 1`; do
-		dunstify -t 1000 --replace=699 -i /usr/share/archcraft/icons/dunst/timer.png "Taking shot in : $sec"
+		dunstify -t 1000 --replace=699 -i /usr/share/icons/dunst/timer.png "Tomando caputra en: $sec"
 		sleep 1
 	done
 }
@@ -70,7 +66,7 @@ fi
 # Variable passed to rofi
 options="$screen\n$area\n$window\n$infive\n$inten"
 
-chosen="$(echo "$options" | $rofi_command -p 'Take Screenshot' -dmenu -selected-row 0)"
+chosen="$(echo "$options" | $rofi_command -p 'Captura de Pantalla' -dmenu -selected-row 0)"
 case $chosen in
     $screen)
 		shotnow
