@@ -18,12 +18,6 @@ En su terminal, ejecute el comando de abajo para iniciar la instalación:
 ```bash
 sudo apt install git inxi -y && cd /tmp && git clone https://github.com/lostalejandro/bspwm && chmod 755 bspwm/* -R && cd bspwm/ && ./instalar.sh
 ```
- 
-## Fedora
-En su terminal, ejecute el comando de abajo para iniciar la instalación:
-```bash
-sudo dnf install -y git inxi && cd /tmp && git clone https://github.com/lostalejandro/bspwm && chmod 755 bspwm/* -R && cd bspwm/ && ./instalar.sh
-```
 
 <hr>
 
@@ -40,11 +34,6 @@ Para que el script se ejecute correctamente, es necesario tener sistema, versió
         <td align="center"valign="center">Debian</td>
         <td align="center"valign="center">Bullseye o Bookworm</td>
         <td align="center"valign="center">Xfce o GNOME</td>
-    </tr>
-    <tr>
-        <td align="center"valign="center">Fedora</td>
-        <td align="center"valign="center">35*</td>
-        <td align="center"valign="center">GNOME</td>
     </tr>
     <tr>
         <td>Pop!_OS</td>
@@ -78,16 +67,6 @@ Pudiendo cambiar el color de acuerdo con el tema seleccionado:
 
 <hr>
 
-## Cambio de tema para LightDM
-
-En caso de que el script sea ejecutado en Debian Xfce o en Xubuntu, será modificado el tema del gestor de inicio, quedando así:
-
-![01](https://user-images.githubusercontent.com/84329097/141336377-58b7b39c-62a2-430d-aad8-c7388b7ae75d.png)
-
-Observación: En Xubuntu está configurado para usar el Wallpaper de la sesión en LightDM, con esto usará el Wallpaper de la sesión.
-
-<hr>
-
 # Dependencias
 
 Para que sea realizada una correcta instalación, es necesario tener instalado `inxi` en su sistema, así como también `git`. En caso de que la instalación sea realizada con el comando presentado arriba, todo será instalado automáticamente.
@@ -95,17 +74,8 @@ Para que sea realizada una correcta instalación, es necesario tener instalado `
 <hr>
 
 # Lo que será instalado
-* Paquetes comúnes a todas las distros:
 
-   > bspwm, sxhkd, rofi, compton, polybar, dunst, [ksuperkey](https://github.com/hanschen/ksuperkey), neofetch, htop, feh, lxappearance, geany, dmenu, nm-tray, xfconf, xsettingsd, xfce4-power-manager, zenity, git.
-
-* Paquetes destinados a las distros xfce:
-
-   > thunar-archive-plugin, catfish, baobab, meld, language-selector-gnome* (solo para Xubuntu).
-
-* Paquetes destinados a las distros GNOME:
-
-   > mate-polkit, i3lock.
+   > bspwm, sxhkd, rofi, compton, polybar, dunst, [ksuperkey](https://github.com/hanschen/ksuperkey), neofetch, htop, feh, lxappearance, geany, dmenu, nm-tray, xfconf, xsettingsd, xfce4-power-manager, zenity, git, i3lock-color.
 
 <hr>
 

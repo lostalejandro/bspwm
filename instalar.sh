@@ -135,7 +135,7 @@ declare -f APPS
 function APPS()
 	{
 			echo "#-----------------------Instalar apps complementarias-------------------------#"
-			sudo apt install neofetch htop feh lxappearance geany dmenu nm-tray xfconf xsettingsd xfce4-power-manager zenity git -y &&
+			sudo apt install neofetch htop feh lxappearance geany dmenu nm-tray xfconf xsettingsd xfce4-power-manager zenity git sudo apt install ttf-mscorefonts-installer -y &&
 			clear &&
 			echo "#----------------------Apps complementarias instaladas------------------------#"
 				sleep 2s
