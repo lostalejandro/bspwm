@@ -10,7 +10,7 @@ fi
 export PATH="$HOME/.cargo/bin:$PATH"
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/alejandro/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 #Path pip
 export PATH="$HOME/.local/bin:$PATH"
