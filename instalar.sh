@@ -19,6 +19,7 @@ function VERIF_DISTRIB()
 			ATUALIZAR
 			KSUPERKEY
 			I3LOCK
+			ALACC
 			APPS_XFCE
 			PERSONA
 		
@@ -30,6 +31,7 @@ function VERIF_DISTRIB()
 			ATUALIZAR
 			KSUPERKEY
 			I3LOCK
+			ALACC
 			APPS_POP
 			PERSONA
 
@@ -42,6 +44,7 @@ function VERIF_DISTRIB()
 			APPS_XFCE
 			KSUPERKEY
 			I3LOCK
+			ALACC
 			PERSONA
 						
 		elif [[ $INXI = *GNOME* && $INXI = *21.10* && $INXI = *Ubuntu* ]]; then
@@ -52,6 +55,7 @@ function VERIF_DISTRIB()
 			ATUALIZAR
 			KSUPERKEY
 			I3LOCK
+			ALACC
 			APPS_POP
 			PERSONA
 			
@@ -63,6 +67,7 @@ function VERIF_DISTRIB()
 			ATUALIZAR
 			KSUPERKEY
 			I3LOCK
+			ALACC
 			APPS_POP
 			PERSONA
 		else	
@@ -121,7 +126,7 @@ declare -f I3LOCK
 function I3LOCK()
 	{
 			echo "#----------------------------Habilitar i3lock--------------------------------#"
-			sudo apt install autoconf gcc make pkg-config libpam0g-dev libcairo2-dev libfontconfig1-dev libxcb-composite0-dev libev-dev libx11-xcb-dev libxcb-xkb-dev libxcb-xinerama0-dev libxcb-randr0-dev libxcb-image0-dev libxcb-util0-dev libxcb-xrm-dev libxcb-xtest0-dev libxkbcommon-dev libxkbcommon-x11-dev libjpeg-dev -y
+			sudo apt install autoconf gcc make pkg-config libpam0g-dev libcairo2-dev libfontconfig1-dev libxcb-composite0-dev libev-dev libx11-xcb-dev libxcb-xkb-dev libxcb-xinerama0-dev libxcb-randr0-dev libxcb-image0-dev libxcb-util0-dev libxcb-xrm-dev libxcb-xtest0-dev libxkbcommon-dev libxkbcommon-x11-dev libjpeg-dev -y &&
 			cd /tmp && git clone https://github.com/Raymo111/i3lock-color.git
 			cd i3lock-color
 			./install-i3lock-color.sh &&
@@ -130,12 +135,29 @@ function I3LOCK()
 				sleep 2s
 	}
 
+#--Función: Base Debian - Instalar Alacritty (Terminal)--#
+declare -f ALACC
+function ALACC()
+	{
+			echo "#---------------------------Habilitar Alacritty------------------------------#"
+			curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh &&
+			source $HOME/.cargo/env &&
+			sudo apt install cmake pkg-config libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev libxkbcommon-dev python3 -y &&
+			cd /tmp && git clone https://github.com/alacritty/alacritty.git &&
+			cd alacritty &&
+			cargo build --release &&
+			sudo cp /tmp/alacritty/target/release/alacritty /usr/local/bin
+			clear &&
+			echo "#---------------------------Alacritty habilitado-----------------------------#"
+				sleep 2s
+	}
+
 #--Función: Instalar aplicaciones complementarias (base Debian)--#
 declare -f APPS
 function APPS()
 	{
 			echo "#-----------------------Instalar apps complementarias-------------------------#"
-			sudo apt install neofetch htop feh lxappearance geany dmenu nm-tray xfconf xsettingsd xfce4-power-manager zenity git sudo apt install ttf-mscorefonts-installer -y &&
+			sudo apt install neofetch chromium thunar htop feh lxappearance geany dmenu nm-tray xfconf xsettingsd xfce4-power-manager zenity git sudo apt install ttf-mscorefonts-installer -y &&
 			clear &&
 			echo "#----------------------Apps complementarias instaladas------------------------#"
 				sleep 2s
@@ -174,6 +196,8 @@ function PERSONA()
 				sudo cp -r /tmp/bspwm/icons/* /usr/share/icons
 				sudo cp -r /tmp/bspwm/themes/* /usr/share/themes
 				sudo cp -r /tmp/bspwm/backgrounds/* /usr/share/backgrounds
+				sudo cp -rf /tmp/bspwm/apps/Alacritty.desktop /usr/share/applications
+				sudo cp -rf /tmp/bspwm/apps/Alacritty.svg /usr/share/pixmaps
 				cp -rf /tmp/bspwm/home/.config/* ~/.config
 				cp -rf /tmp/bspwm/home/.Xresources.d $HOME
 				cp -rf /tmp/bspwm/home/.Xresources $HOME

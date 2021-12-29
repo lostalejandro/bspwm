@@ -75,7 +75,7 @@ Para que sea realizada una correcta instalación, es necesario tener instalado `
 
 # Lo que será instalado
 
-   > bspwm, sxhkd, rofi, compton, polybar, dunst, [ksuperkey](https://github.com/hanschen/ksuperkey), neofetch, htop, feh, lxappearance, geany, dmenu, nm-tray, xfconf, xsettingsd, xfce4-power-manager, zenity, git, i3lock-color.
+   > bspwm, sxhkd, rofi, compton, polybar, dunst, [ksuperkey](https://github.com/hanschen/ksuperkey), alacritty, neofetch, htop, feh, lxappearance, geany, dmenu, nm-tray, xfconf, xsettingsd, xfce4-power-manager, zenity, git, i3lock-color.
 
 <hr>
 
@@ -84,7 +84,7 @@ Para utilizar *bspwm* notará que muchas veces el teclado es nuestro mejor amigo
 
 En caso de que quiera personalizar alguno, modifique o elimine las líneas que usted prefiera, puede ser realizado editando el archivo: `~/.config/sxhkd/sxhkdrc`.
 
-Atajos y a configurados:
+Atajos ya configurados:
 <br>(Nota: <kbd> Super</kbd> = Tecla Windows)
 
 ## Menus
@@ -101,7 +101,7 @@ Atajos y a configurados:
 ## Aplicaciones
 <kbd>Super</kbd> + <kbd>Enter</kbd> - Terminal Alacritty <br>
 <kbd>Super</kbd> + <kbd>e</kbd> - Gestor de archivos (thunar)<br>
-<kbd>Super</kbd> + <kbd>b</kbd> - Firefox<br>
+<kbd>Super</kbd> + <kbd>b</kbd> - Chromium<br>
 <kbd>Super</kbd> + <kbd>g</kbd> - Geany<br>
 <kbd>Super</kbd> + <kbd>c</kbd> - Cerrar Ventana enfocada <br>
 
