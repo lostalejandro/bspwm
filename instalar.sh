@@ -20,6 +20,7 @@ function VERIF_DISTRIB()
 			KSUPERKEY
 			I3LOCK
 			ALACC
+			APPS
 			APPS_XFCE
 			PERSONA
 		
@@ -32,6 +33,7 @@ function VERIF_DISTRIB()
 			KSUPERKEY
 			I3LOCK
 			ALACC
+			APPS
 			APPS_POP
 			PERSONA
 
@@ -41,10 +43,11 @@ function VERIF_DISTRIB()
 			echo "#--------------------Sistema soportado, la instalación seguirá--------------------#"
 			echo ""
 			ATUALIZAR
-			APPS_XFCE
 			KSUPERKEY
 			I3LOCK
 			ALACC
+			APPS
+			APPS_XFCE
 			PERSONA
 						
 		elif [[ $INXI = *GNOME* && $INXI = *21.10* && $INXI = *Ubuntu* ]]; then
@@ -56,6 +59,7 @@ function VERIF_DISTRIB()
 			KSUPERKEY
 			I3LOCK
 			ALACC
+			APPS
 			APPS_POP
 			PERSONA
 			
@@ -68,6 +72,7 @@ function VERIF_DISTRIB()
 			KSUPERKEY
 			I3LOCK
 			ALACC
+			APPS
 			APPS_POP
 			PERSONA
 		else	
@@ -103,7 +108,6 @@ function BSPWM()
 				clear &&
 			echo "#---------------------------Base BSPWM instalada-----------------------------#"
 				sleep 2s
-			APPS
 	}
 
 #--Función: Base Debian - Instalar ksuperkey (hacer posible llamar a rofi con la tecla super)--#
@@ -141,15 +145,17 @@ function ALACC()
 	{
 			echo "#---------------------------Habilitar Alacritty------------------------------#"
 			curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh &&
-			source $HOME/.cargo/env &&
+			source $HOME/.cargo/env
 			sudo apt install cmake pkg-config libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev libxkbcommon-dev python3 -y &&
-			cd /tmp && git clone https://github.com/alacritty/alacritty.git &&
-			cd alacritty &&
-			cargo build --release &&
+			cd /tmp
+			git clone https://github.com/alacritty/alacritty.git &&
+			cd /tmp/alacritty
+			cargo build --release
 			sudo cp /tmp/alacritty/target/release/alacritty /usr/local/bin
 			clear &&
 			echo "#---------------------------Alacritty habilitado-----------------------------#"
 				sleep 2s
+			APPS
 	}
 
 #--Función: Instalar aplicaciones complementarias (base Debian)--#
@@ -157,11 +163,10 @@ declare -f APPS
 function APPS()
 	{
 			echo "#-----------------------Instalar apps complementarias-------------------------#"
-			sudo apt install neofetch chromium thunar htop feh lxappearance geany dmenu nm-tray xfconf xsettingsd xfce4-power-manager zenity git sudo apt install ttf-mscorefonts-installer -y &&
+			sudo apt install neofetch chromium thunar htop feh lxappearance geany dmenu nm-tray xfconf xsettingsd xfce4-power-manager zenity git ttf-mscorefonts-installer -y &&
 			clear &&
 			echo "#----------------------Apps complementarias instaladas------------------------#"
 				sleep 2s
-			PERSONA
 	}
 
 #--Función: Instalar aplicaciones complementarias en Xubuntu--#
@@ -191,7 +196,7 @@ declare -f PERSONA
 function PERSONA()
 	{
 			echo "#----------------Copiar personalizaciones (icones, temas, fonts y fondos)--------------#"
-				cd /tmp && git clone https://github.com/lostalejandro/bspwm && chmod 755 bspwm/* -R
+				cd /tmp/bspwm &&
 				sudo cp -r /tmp/bspwm/fonts/* /usr/share/fonts
 				sudo cp -r /tmp/bspwm/icons/* /usr/share/icons
 				sudo cp -r /tmp/bspwm/themes/* /usr/share/themes
@@ -213,7 +218,7 @@ function PERSONA()
 			echo "#---------------------Personalizaciones principales copiadas-----------------------#"
 				sleep 3s
 			clear
-			NOTF_SUCCESS
+			NOTF_SUCESS
 	}
 	
 #--Función: Notificar operacion exitosa--#
@@ -228,7 +233,7 @@ declare -f NOTF_FALHA
 function NOTF_FALHA()
 	{
 		clear
-		echo "#---------------------------Sistema no sportado-------------------------------#"
+		echo "#---------------------------Sistema no soportado-------------------------------#"
 		echo "#--------Este script fue diseñado para correr en las siguientes distros:------#"		
 		echo "#-----------------Debian Bullseye o Bookworm (xfce y gnome)-------------------#"
 		echo "#------------------------------Pop!_Os 21.04----------------------------------#"
