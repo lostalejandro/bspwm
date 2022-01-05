@@ -14,7 +14,7 @@ function VERIF_DISTRIB()
 	if [[ $INXI = *Xfce* && $INXI = *21.10* && $INXI = *Ubuntu* ]]; then
 			inxi -S
 			sleep 2s
-			echo "#--------------------Sistema soportado, la instalación seguirá--------------------#"
+			echo "#-------------------Sistema soportado, la instalación seguirá------------------#"
 			echo ""
 			ATUALIZAR
 			KSUPERKEY
@@ -27,7 +27,7 @@ function VERIF_DISTRIB()
 		elif [[ $ID = "Distributor ID:	Pop" && $RELEASE = "Release:	21.10" ]]; then
 			inxi -S
 			sleep 2s
-			echo "#--------------------Sistema soportado, la instalación seguirá--------------------#"
+			echo "#-------------------Sistema soportado, la instalación seguirá------------------#"
 			echo ""
 			ATUALIZAR
 			KSUPERKEY
@@ -40,7 +40,7 @@ function VERIF_DISTRIB()
 		elif [[ $INXI = *Xfce* && "Distributor ID:	Debian" && ($RELEASE = "Release:	testing" || $RELEASE = "Release:	11") ]]; then
 			inxi -S
 			sleep 2s
-			echo "#--------------------Sistema soportado, la instalación seguirá--------------------#"
+			echo "#-------------------Sistema soportado, la instalación seguirá------------------#"
 			echo ""
 			ATUALIZAR
 			KSUPERKEY
@@ -53,7 +53,7 @@ function VERIF_DISTRIB()
 		elif [[ $INXI = *GNOME* && $INXI = *21.10* && $INXI = *Ubuntu* ]]; then
 			inxi -S
 			sleep 2s
-			echo "#---------------------Sistema soportado, la instalación seguirá--------------------#"
+			echo "#-------------------Sistema soportado, la instalación seguirá------------------#"
 			echo ""
 			ATUALIZAR
 			KSUPERKEY
@@ -66,7 +66,7 @@ function VERIF_DISTRIB()
 		elif [[ $INXI = *GNOME* && "Distributor ID:	Debian" && ($RELEASE = "Release:	testing" || $RELEASE = "Release:	11") ]]; then
 			inxi -S
 			sleep 2s
-			echo "#---------------------Sistema soportado, la instalación seguirá--------------------#"
+			echo "#-------------------Sistema soportado, la instalación seguirá------------------#"
 			echo ""
 			ATUALIZAR
 			KSUPERKEY
@@ -84,17 +84,17 @@ function VERIF_DISTRIB()
 #--Función: Actualizar sistema (base Debian)--#
 declare -f ATUALIZAR
 function ATUALIZAR(){
-			echo "#-----------------------------Actualizar Sistema------------------------------#"
+			echo "#-----------------------------Actualizar sistema-------------------------------#"
 				sudo apt update &&
-			echo "#-------------------------Repositorios Actualizados---------------------------#"
+			echo "#--------------------------Repositorios actualizados---------------------------#"
 			sleep 1s
 				sudo apt upgrade -y &&
-			echo "#---------------------------Programas Actualizados----------------------------#"
+			echo "#---------------------------Programas actualizados-----------------------------#"
 			sleep 1s
 
 			sudo apt dist-upgrade -y && sudo apt autoclean && sudo apt autoremove -y &&
 				clear &&
-			echo "#-----------------------------Sistema Actualizado-----------------------------#"
+			echo "#-----------------------------Sistema actualizado------------------------------#"
 				sleep 2s
 			BSPWM
 		}
@@ -103,10 +103,10 @@ function ATUALIZAR(){
 declare -f BSPWM
 function BSPWM()
 	{
-			echo "#---------------------------Instalando base BSPWM----------------------------#"
+			echo "#----------------------------Instalando base BSPWM-----------------------------#"
 				sudo apt install bspwm sxhkd rofi compton polybar dunst -y &&
 				clear &&
-			echo "#---------------------------Base BSPWM instalada-----------------------------#"
+			echo "#----------------------------Base BSPWM instalada------------------------------#"
 				sleep 2s
 	}
 
@@ -114,14 +114,14 @@ function BSPWM()
 declare -f KSUPERKEY
 function KSUPERKEY()
 	{
-			echo "#----------------------------Habilitar ksuperkey-----------------------------#"
+			echo "#-----------------------------Habilitar KSUPERKEY------------------------------#"
 			sudo apt install gcc make libx11-dev libxtst-dev pkg-config -y
 			cd /tmp && git clone https://github.com/hanschen/ksuperkey.git
 			cd ksuperkey
 			make
 			sudo make install &&
 			clear &&
-			echo "#---------------------------Ksuperkey habilitado-----------------------------#"
+			echo "#----------------------------KSUEPRKEY habilitado------------------------------#"
 				sleep 2s
 	}
 	
@@ -129,13 +129,13 @@ function KSUPERKEY()
 declare -f I3LOCK
 function I3LOCK()
 	{
-			echo "#----------------------------Habilitar i3lock--------------------------------#"
+			echo "#-----------------------------Habilitar I3LOCK---------------------------------#"
 			sudo apt install autoconf gcc make pkg-config libpam0g-dev libcairo2-dev libfontconfig1-dev libxcb-composite0-dev libev-dev libx11-xcb-dev libxcb-xkb-dev libxcb-xinerama0-dev libxcb-randr0-dev libxcb-image0-dev libxcb-util0-dev libxcb-xrm-dev libxcb-xtest0-dev libxkbcommon-dev libxkbcommon-x11-dev libjpeg-dev -y &&
 			cd /tmp && git clone https://github.com/Raymo111/i3lock-color.git
 			cd i3lock-color
 			./install-i3lock-color.sh &&
 			clear &&
-			echo "#----------------------------i3lock habilitado-------------------------------#"
+			echo "#-----------------------------I3LOCK habilitado--------------------------------#"
 				sleep 2s
 	}
 
@@ -143,7 +143,7 @@ function I3LOCK()
 declare -f ALACC
 function ALACC()
 	{
-			echo "#---------------------------Habilitar Alacritty------------------------------#"
+			echo "#----------------------------Habilitar ALACRITTY-------------------------------#"
 			curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh &&
 			source $HOME/.cargo/env
 			sudo apt install cmake pkg-config libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev libxkbcommon-dev python3 -y &&
@@ -153,7 +153,7 @@ function ALACC()
 			cargo build --release
 			sudo cp /tmp/alacritty/target/release/alacritty /usr/local/bin
 			clear &&
-			echo "#---------------------------Alacritty habilitado-----------------------------#"
+			echo "#----------------------------ALACRITTY habilitado------------------------------#"
 				sleep 2s
 			APPS
 	}
@@ -162,10 +162,10 @@ function ALACC()
 declare -f APPS
 function APPS()
 	{
-			echo "#-----------------------Instalar apps complementarias-------------------------#"
-			sudo apt install neofetch chromium thunar htop feh lxappearance geany dmenu nm-tray xfconf xsettingsd xfce4-power-manager zenity git ttf-mscorefonts-installer -y &&
+			echo "#------------------------Instalar apps complementarias-------------------------#"
+			sudo apt install neofetch chromium mpd ncmpcpp thunar htop feh lxappearance geany dmenu nm-tray xfconf xsettingsd xfce4-power-manager zenity git ttf-mscorefonts-installer -y &&
 			clear &&
-			echo "#----------------------Apps complementarias instaladas------------------------#"
+			echo "#-----------------------Apps complementarias instaladas------------------------#"
 				sleep 2s
 	}
 
@@ -173,10 +173,10 @@ function APPS()
 declare -f APPS_XFCE
 function APPS_XFCE()
 	{
-			echo "#------------------Instalar apps complementarias para xfce--------------------#"
+			echo "#-------------------Instalar apps complementarias para XFCE--------------------#"
 			sudo apt install thunar-archive-plugin catfish baobab meld -y &&
 			clear &&
-			echo "#-------------------------Apps para xfce instaladas---------------------------#"
+			echo "#--------------------------Apps para XFCE instaladas---------------------------#"
 				sleep 2s
 	}
 	
@@ -184,10 +184,10 @@ function APPS_XFCE()
 declare -f APPS_POP
 function APPS_POP()
 	{
-			echo "#------------------------------Apps para Gnome-------------------------------#"
+			echo "#------------------Instalar apps complementarias para GNOME--------------------#"
 			sudo apt install mate-polkit -y &&
 			clear &&
-			echo "#-------------------------Apps para Gnome instaladas-------------------------#"
+			echo "#--------------------------Apps para GNOME instaladas--------------------------#"
 				sleep 2s
 	}
 	
@@ -195,7 +195,7 @@ function APPS_POP()
 declare -f PERSONA
 function PERSONA()
 	{
-			echo "#----------------Copiar personalizaciones (icones, temas, fonts y fondos)--------------#"
+			echo "#---------Copiar personalizaciones (iconos, temas, fonts, fondos, etc)---------#"
 				cd /tmp/bspwm &&
 				sudo cp -r /tmp/bspwm/fonts/* /usr/share/fonts
 				sudo cp -r /tmp/bspwm/icons/* /usr/share/icons
@@ -215,7 +215,7 @@ function PERSONA()
 				cp -rf /tmp/bspwm/home/.fehbg $HOME
 				
 			clear &&
-			echo "#---------------------Personalizaciones principales copiadas-----------------------#"
+			echo "#---------------------Personalizaciones principales copiadas-------------------#"
 				sleep 3s
 			clear
 			NOTF_SUCESS
@@ -233,15 +233,15 @@ declare -f NOTF_FALHA
 function NOTF_FALHA()
 	{
 		clear
-		echo "#---------------------------Sistema no soportado-------------------------------#"
-		echo "#--------Este script fue diseñado para correr en las siguientes distros:------#"		
-		echo "#-----------------Debian Bullseye o Bookworm (xfce y gnome)-------------------#"
-		echo "#------------------------------Pop!_Os 21.04----------------------------------#"
-		echo "#--------------------------Ubuntu o Xubuntu 21.10-----------------------------#"
-		echo "#-En caso que esté usando una de las mencionadas, debe tener 'inxi' instalado-#"
+			echo "#----------------------------Sistema no soportado------------------------------#"
+			echo "#--------Este script fue diseñado para correr en las siguientes distros:-------#"		
+			echo "#------------------Debian Bullseye o Bookworm (XFCE y GNOME)-------------------#"
+			echo "#-------------------------------Pop!_Os 21.10----------------------------------#"
+			echo "#---------------------------Ubuntu o Xubuntu 21.10-----------------------------#"
+			echo "#-En caso que esté usando- una de las mencionadas, debe tener 'inxi' instalado-#"
 	}
 		
 ##--------------------------------Funciones utilizadas en el script--------------------------------##
 	clear
-		echo "#---------------Este asistente instalará bspwm en su máquina---------------#"
+			echo "#------------------Este asistente instalará bspwm en su máquina----------------#"
 	VERIF_DISTRIB

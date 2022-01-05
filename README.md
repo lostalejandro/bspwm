@@ -33,7 +33,7 @@ Para que el script se ejecute correctamente, es necesario tener sistema, versió
     <tr>
         <td align="center"valign="center">Debian</td>
         <td align="center"valign="center">Bullseye o Bookworm</td>
-        <td align="center"valign="center">Xfce o GNOME</td>
+        <td align="center"valign="center">XFCE o GNOME</td>
     </tr>
     <tr>
         <td>Pop!_OS</td>
@@ -46,7 +46,7 @@ Para que el script se ejecute correctamente, es necesario tener sistema, versió
     </tr>
      <tr>
         <td align="center"valign="center">Xubuntu</td>
-        <td align="center"valign="center">Xfce</td>
+        <td align="center"valign="center">XFCE</td>
     </tr>
 </table>
 
@@ -75,7 +75,7 @@ Para que sea realizada una correcta instalación, es necesario tener instalado `
 
 # Lo que será instalado
 
-   > bspwm, sxhkd, rofi, compton, polybar, dunst, [ksuperkey](https://github.com/hanschen/ksuperkey), alacritty, neofetch, htop, feh, lxappearance, geany, dmenu, nm-tray, xfconf, xsettingsd, xfce4-power-manager, zenity, git, i3lock-color.
+   > bspwm, sxhkd, rofi, compton, polybar, dunst, [ksuperkey](https://github.com/hanschen/ksuperkey), alacritty, neofetch, htop, feh, lxappearance, geany, dmenu, nm-tray, xfconf, xsettingsd, xfce4-power-manager, zenity, git, i3lock-color, chromium, mpd, ncmpcpp.
 
 <hr>
 
@@ -88,34 +88,34 @@ Atajos ya configurados:
 <br>(Nota: <kbd> Super</kbd> = Tecla Windows)
 
 ## Menus
-<kbd>Super</kbd> o <kbd>Alt</kbd> + <kbd>F1</kbd> - Menu de aplicaciones <br>
-<kbd>Super</kbd> + <kbd>F1</kbd> - Menu de ejecutables <br>
-<kbd>Super</kbd> + <kbd>w</kbd> - Muestr losa programas abiertos <br>
-<kbd>Super</kbd> + <kbd>x</kbd> - Menu de opciones de apagado <br>
-<kbd>Super</kbd> + <kbd>t</kbd> - Selector del tema <br>
+<kbd>Super</kbd> / <kbd>Alt</kbd> + <kbd>F1</kbd> - Lanza el menu de aplicaciones <br>
+<kbd>Super</kbd> + <kbd>F1</kbd> - Lanza el menu de ejecutables <br>
+<kbd>Super</kbd> + <kbd>w</kbd> - Muestra los programas abiertos <br>
+<kbd>Super</kbd> + <kbd>x</kbd> - Lanza el menu de opciones de apagado <br>
+<kbd>Super</kbd> + <kbd>t</kbd> - Muestra el selector de temas <br>
 
 ## Comandos internos
-<kbd>Super</kbd> + <kbd>esc</kbd> - Recargar atajos de teclado (archivo sxhkdrc)<br>
-<kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>r</kbd>- Reiniciar BSPWM<br>
+<kbd>Super</kbd> + <kbd>esc</kbd> - Recarga los atajos de teclado (archivo sxhkdrc)<br>
+<kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>r</kbd>- Reinicia BSPWM<br>
 
 ## Aplicaciones
 <kbd>Super</kbd> + <kbd>Enter</kbd> - Terminal Alacritty <br>
 <kbd>Super</kbd> + <kbd>e</kbd> - Gestor de archivos (thunar)<br>
 <kbd>Super</kbd> + <kbd>b</kbd> - Chromium<br>
 <kbd>Super</kbd> + <kbd>g</kbd> - Geany<br>
-<kbd>Super</kbd> + <kbd>c</kbd> - Cerrar Ventana enfocada <br>
+<kbd>Super</kbd> + <kbd>c</kbd> - Cierra la ventana enfocada <br>
 
 ## Áreas de trabajo
-<kbd>Super</kbd> + <kbd>1-9</kbd> - Cambio del área de trabajo <br>
-<kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>←/→</kbd> - Cambio del área de trabajo hacia un lado<br>
+<kbd>Super</kbd> + <kbd>1-9</kbd> - Cambia el área de trabajo al número deseado <br>
+<kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>←/→</kbd> - Cambia el área de trabajo hacia un lado o el otro<br>
 
 ## Administrar ventanas
-<kbd>Super</kbd> + <kbd>Shift</kbd> + <kbd>1-9</kbd> - Envia la ventana enfocada al área de trabajo deseada <br>
-<kbd>Super</kbd> + <kbd>Barra espaciadora</kbd> - Cambio entre el modo tiling / floating <br>
+<kbd>Super</kbd> + <kbd>Shift</kbd> + <kbd>1-9</kbd> - Envia la ventana enfocada al área de trabajo deseado <br>
+<kbd>Super</kbd> + <kbd>Barra espaciadora</kbd> - Cambia entre el modo tiling / floating <br>
 <kbd>Super</kbd> + <kbd>Click Izq</kbd> - Permite mover la ventana enfocada en modo tiling / flotaing  <br>
 <kbd>Super</kbd> + <kbd>F</kbd> - Coloca la ventana enfocada en Modo ventana completa <br>
 <kbd>Super</kbd> + <kbd>H/V/Q</kbd> - Prepara a la división de la ventana en Horizontal, Vertical o Cancela <br>
-<kbd>Super</kbd> + <kbd>TAB</kbd> - Vuelve para la última ventana abierta <br>
+<kbd>Super</kbd> + <kbd>TAB</kbd> - Vuelve a la última ventana abierta <br>
 <kbd>Super</kbd> + <kbd>Ctrl</kbd> + <kbd>←/→/↑ /↓ </kbd> - Expande la ventana enfocada <br>
 <kbd>Super</kbd> + <kbd>Alt</kbd> + <kbd>←/→/↑ /↓</kbd> - Disminuye la ventana enfocada <br>
 
