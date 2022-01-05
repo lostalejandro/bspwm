@@ -76,7 +76,6 @@ for i in ${files[@]}; do
 # 4 > code
 bspc rule -a Geany desktop='^4' follow=on focus=on
 bspc rule -a VSCodium desktop='^4' follow=on focus=on
-bspc rule -a Mousepad desktop='^4' follow=on focus=on
 declare -a code=()
 for i in ${code[@]}; do
    bspc rule -a $i desktop='^4' state=floating follow=on focus=on; done
@@ -121,17 +120,16 @@ for i in ${games[@]}; do
 bspc rule -a 'VirtualBox Manager' desktop='^9' follow=on focus=on
 bspc rule -a GParted desktop='^9' follow=on focus=on
 bspc rule -a 'Software' desktop='^9' follow=on focus=on
-bspc rule -a Virt-manager desktop='^9' follow=on focus=on
 declare -a settings=(Lxappearance Arandr Pavucontrol \
 Xfce4-power-manager-settings Exo-helper-1 \
-Nm-connection-editor)
+Nm-connection-editor Virt-manager)
 for i in ${settings[@]}; do
    bspc rule -a $i desktop='^9' state=floating follow=on focus=on; done
 
 # special rules
 bspc rule -a Conky state=floating manage=off
 bspc rule -a stalonetray state=floating manage=off
-declare -a floating=(Gnome-calculator Viewnior feh authy)
+declare -a floating=(Gnome-calculator Viewnior feh authy Mousepad)
 for i in ${floating[@]}; do
    bspc rule -a $i state=floating follow=on focus=on; done
 
@@ -178,4 +176,4 @@ exec mpd &
 bspcolors
 bspbar
 bspcomp
-bspfloat
+bspfloat &
