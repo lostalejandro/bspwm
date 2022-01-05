@@ -75,7 +75,7 @@ Para que sea realizada una correcta instalación, es necesario tener instalado `
 
 # Lo que será instalado
 
-   > bspwm, sxhkd, rofi, compton, polybar, dunst, [ksuperkey](https://github.com/hanschen/ksuperkey), alacritty, neofetch, htop, feh, lxappearance, geany, dmenu, nm-tray, xfconf, xsettingsd, xfce4-power-manager, zenity, git, i3lock-color, chromium, mpd, ncmpcpp.
+   >  [ksuperkey](https://github.com/hanschen/ksuperkey), bspwm, sxhkd, rofi, compton, polybar, dunst, alacritty, neofetch, htop, feh, lxappearance, geany, dmenu, nm-tray, xfconf, xsettingsd, xfce4-power-manager, zenity, git, i3lock-color, chromium, mpd, ncmpcpp.
 
 <hr>
 
