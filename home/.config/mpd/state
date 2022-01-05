@@ -1,0 +1,52 @@
+sw_volume: 98
+audio_device_state:1:MPD Audio
+audio_device_state:1:ncmpcpp visualizer
+state: pause
+current: 20
+time: 73.080000
+random: 1
+repeat: 1
+single: 0
+consume: 0
+crossfade: 5
+mixrampdb: 0.000000
+mixrampdelay: -1.000000
+playlist_begin
+0:lo-lo hi/16 - Oui Lele - 3 Am.mp3
+1:lo-lo hi/33 - ProdBySunny - Whole World (Slowed and Reverb).mp3
+2:lo-lo hi/08 - Origami Beats - 6 Am.mp3
+3:lo-lo hi/23 - Chief. - Merlot.mp3
+4:lo-lo hi/32 - Rxseboy - Bus Ride (feat. chloe moriondo).mp3
+5:lo-lo hi/09 - _tag - busking.mp3
+6:lo-lo hi/37 - Mr. Wobbles - Deserve It.mp3
+7:lo-lo hi/29 - Dotlights - Have Doughnut (Shigeto Remix).mp3
+8:lo-lo hi/36 - Mr. Wobbles - I Don't Want to Be Friends.mp3
+9:lo-lo hi/15 - Kid Tarô - Islander.mp3
+10:lo-lo hi/14 - chloe moriondo - Kindergarten (BUNT. Remix).mp3
+11:lo-lo hi/31 - Don Toliver - Double Standards.mp3
+12:lo-lo hi/26 - Tenno - Lone Wanderer.mp3
+13:lo-lo hi/27 - Timmies - Primaere.mp3
+14:lo-lo hi/25 - KAMAUU - MANGO (Remix) [feat. Adeline & Masego].mp3
+15:lo-lo hi/12 - Timmies - i have got thoughts.mp3
+16:lo-lo hi/28 - Retrosoft - Night Sky.mp3
+17:lo-lo hi/19 - Chief. - Nightingale.mp3
+18:lo-lo hi/20 - Origami Beats - Ordinary Day.mp3
+19:lo-lo hi/11 - Chief. - can't explain.mp3
+20:lo-lo hi/10 - Origami Beats - Places.mp3
+21:lo-lo hi/18 - Shiloh Dynasty - In Her Heart.mp3
+22:lo-lo hi/38 - Mr. Wobbles - Sorry.mp3
+23:lo-lo hi/05 - Origami Beats - Digimon.mp3
+24:lo-lo hi/06 - Origami Beats - Sunflower Seeds.mp3
+25:lo-lo hi/03 - Origami Beats - Big Pimpin'.mp3
+26:lo-lo hi/04 - Origami Beats - Deku Tree.mp3
+27:lo-lo hi/02 - Origami Beats - Sunday Service.mp3
+28:lo-lo hi/01 - Origami Beats - Better Self.mp3
+29:lo-lo hi/17 - Origami Beats - Chill With Me.mp3
+30:lo-lo hi/35 - Mr. Wobbles - Stick Around.mp3
+31:lo-lo hi/24 - Chief. - liquid.mp3
+32:lo-lo hi/07 - Origami Beats - Naruto.mp3
+33:lo-lo hi/21 - Philanthrope - Satoshi.mp3
+34:lo-lo hi/22 - Gordon - When the Time Comes.mp3
+35:lo-lo hi/34 - Chief. - picking berries.mp3
+36:lo-lo hi/30 - Chief. - courtyard.mp3
+playlist_end
