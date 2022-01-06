@@ -1,0 +1,133 @@
+#!/usr/bin/env bash
+
+## Copyright (C) 2020-2021 Aditya Shakya <adi1090x@gmail.com>
+## Everyone is permitted to copy and distribute copies of this file under GNU-GPL3
+
+DIR="$HOME/.config/bspwm"
+
+rofi_command="rofi -theme $DIR/rofi/themes/apps.rasi"
+
+# Apps
+animals="Animals"
+bonsai="Bonsai"
+colorbar="Colorbar"
+colorblocks="Colorblocks"
+colortest="Colortest"
+colorwheel="Colorwheel"
+crunch="Crunch"
+crunchbang="Crunchbang"
+dna="Crunchbang"
+emwave="Emwave"
+faces="Faces"
+fade="Fade"
+ghosts="Ghosts"
+hedgehogs="Hedgehogs"
+illumina="Illumina"
+invaders="Invaders"
+mouseface="Mouseface"
+panes="Panes"
+pipes="Pipes"
+pipes3d="Pipes3d"
+railcars="Railcars"
+rallyx="Rallyx"
+square="Square"
+tanks="Tanks"
+testfonts="Testfonts"
+tiefighter="Tiefighter"
+unix="Unix"
+zwaves="Zwaves"
+
+# Variable passed to rofi
+options="$animals\n$bonsai\n$colorbar\n$colorblocks\n$colortest\n$colorwheel\n$crunch\n$crunchbang\n$dna\n$emwave\n$faces\n$fade\n$ghosts\n$hedgehogs\n$illumina\n$invaders\n$mouseface\n$panes\n$pipes\n$pipes3d\n$railcars\n$rallyx\n$square\n$tanks\n$testfonts\n$tiefighter\n$unix\n$zwaves"
+
+# Functions
+
+chosen="$(echo "$options" | $rofi_command -p "Ejecuta ilustraciones en shell" -dmenu -selected-row 0)"
+case $chosen in
+    $animals)
+        alacritty --hold -e ~/.config/bspwm/scripts/terminal/animals
+        ;;
+    $bonsai)
+        alacritty --hold -e ~/.config/bspwm/scripts/terminal/bonsai
+        ;;
+    $colorbar)
+        alacritty --hold -e ~/.config/bspwm/scripts/terminal/colorbar
+        ;;                                                   
+    $colorblocks)                                                 
+        alacritty --hold -e ~/.config/bspwm/scripts/terminal/colorblocks
+        ;;                                                   
+    $colortest)                                                 
+        alacritty --hold -e ~/.config/bspwm/scripts/terminal/colortest
+        ;;                                                   
+    $colorwheel)                                                 
+        alacritty --hold -e ~/.config/bspwm/scripts/terminal/colorwheel
+        ;;                                                   
+    $crunch)                                                 
+        alacritty --hold -e ~/.config/bspwm/scripts/terminal/crunch
+        ;;                                                   
+    $crunchbang)                                                 
+        alacritty --hold -e ~/.config/bspwm/scripts/terminal/crunchbang
+        ;;                                                   
+    $dna)                                                 
+        alacritty --hold -e ~/.config/bspwm/scripts/terminal/dna
+        ;;                                                   
+    $emwave)                                                 
+        alacritty --hold -e ~/.config/bspwm/scripts/terminal/emwave
+        ;;                                                   
+    $faces)                                                 
+        alacritty --hold -e ~/.config/bspwm/scripts/terminal/faces
+        ;;                                                   
+    $fade)                                                 
+        alacritty --hold -e ~/.config/bspwm/scripts/terminal/fade
+        ;;                                                   
+    $ghosts)                                                 
+        alacritty --hold -e ~/.config/bspwm/scripts/terminal/ghosts
+        ;;                                                   
+    $hedgehogs)                                                 
+        alacritty --hold -e ~/.config/bspwm/scripts/terminal/hedgehogs
+        ;;                                                   
+    $illumina)                                                 
+        alacritty --hold -e ~/.config/bspwm/scripts/terminal/illumina
+        ;;                                                   
+    $invaders)                                                 
+        alacritty --hold -e ~/.config/bspwm/scripts/terminal/invaders
+        ;;                                                   
+    $mouseface)                                                 
+        alacritty --hold -e ~/.config/bspwm/scripts/terminal/mouseface
+        ;;                                                   
+    $panes)                                                 
+        alacritty --hold -e ~/.config/bspwm/scripts/terminal/panes
+        ;;                                                   
+    $pipes)                                                 
+        alacritty --hold -e ~/.config/bspwm/scripts/terminal/pipes
+        ;;                                                   
+    $pipes3d)                                                 
+        alacritty --hold -e ~/.config/bspwm/scripts/terminal/pipes3d
+        ;;                                                   
+    $railcars)                                                 
+        alacritty --hold -e ~/.config/bspwm/scripts/terminal/railcars
+        ;;                                                   
+    $rallyx)                                                 
+        alacritty --hold -e ~/.config/bspwm/scripts/terminal/rally-x
+        ;;                                                   
+    $square)                                                 
+        alacritty --hold -e ~/.config/bspwm/scripts/terminal/square
+        ;;                                                   
+    $tanks)                                                 
+        alacritty --hold -e ~/.config/bspwm/scripts/terminal/tanks
+        ;;                                                   
+    $testfonts)                                                 
+        alacritty --hold -e ~/.config/bspwm/scripts/terminal/testfonts
+        ;;                                                   
+    $tiefighter)                                                 
+        alacritty --hold -e ~/.config/bspwm/scripts/terminal/tiefighter
+        ;;                                                   
+    $unix)                                                 
+        alacritty --hold -e ~/.config/bspwm/scripts/terminal/unix
+        ;;                                                   
+    $zwaves)                                                 
+        alacritty --hold -e ~/.config/bspwm/scripts/terminal/zwaves
+        ;;
+esac
+
+

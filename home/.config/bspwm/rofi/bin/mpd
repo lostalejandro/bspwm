@@ -65,16 +65,16 @@ fi
 chosen="$(echo "$options" | $rofi_command -p "$current" -dmenu $active $urgent -selected-row 0)"
 case $chosen in
     $button_previous)
-        mpc -q prev && dunstify Anterior
+        mpc -q prev && notify-send -u low -t 1800 " $(mpc current)"
         ;;
     $toggle)
-        mpc -q toggle
+        mpc -q toggle && notify-send -u low -t 1800 " $(mpc current)"
         ;;
     $button_stop)
         mpc -q stop
         ;;
     $button_next)
-        mpc -q next && dunstify Siguiente
+        mpc -q next && notify-send -u low -t 1800 " $(mpc current)"
         ;;
     $tog_repeat)
         mpc -q repeat

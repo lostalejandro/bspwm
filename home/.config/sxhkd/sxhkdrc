@@ -22,8 +22,8 @@ super + t
 	sh ~/.config/bspwm/rofi/bin/themes
 
 # Rofi Menus/Applets
-super + {w,x,r,p,n}
-	sh ~/.config/bspwm/rofi/bin/{windows,powermenu,asroot,mpd,network}
+super + {w,x,r,p,n,a}
+	sh ~/.config/bspwm/rofi/bin/{windows,powermenu,asroot,mpd,network,apps}
 	
 Print
 	sh ~/.config/bspwm/rofi/bin/screenshot
@@ -36,15 +36,11 @@ super + {e,b,m,g}
 
 # Terminal Apps
 ctrl + alt + {m,v,r,h,n,c,p}
-	alacritty -e {cmatrix,nvim,ranger,htop,neofetch,cava,ncmpcpp}
+	alacritty --hold -e {cmatrix,nvim,ranger,htop,neofetch,cava,ncmpcpp}
 
 # Color Picker
 super + Insert
 	~/.config/bspwm/scripts/bin/color-gpick
-
-# Lockscreen
-super +  F4
-   ~/.config/bspwm/scripts/bin/xflock4
 
 ##---------- System Keys ----------##
 

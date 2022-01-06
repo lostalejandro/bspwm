@@ -110,13 +110,6 @@ if [ -x "$(command -v colorls)" ]; then
     alias la="colorls -al"
 fi
 
-# Neofetch persistent
-
-if [[ "$RUN_NEOFETCH" -eq 1 ]]
- then
-   neofetch
- fi
-
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 

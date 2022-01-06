@@ -20,6 +20,7 @@ function VERIF_DISTRIB()
 			KSUPERKEY
 			I3LOCK
 			ALACC
+			PICOM
 			APPS
 			APPS_XFCE
 			PERSONA
@@ -33,6 +34,7 @@ function VERIF_DISTRIB()
 			KSUPERKEY
 			I3LOCK
 			ALACC
+			PICOM
 			APPS
 			APPS_POP
 			PERSONA
@@ -46,6 +48,7 @@ function VERIF_DISTRIB()
 			KSUPERKEY
 			I3LOCK
 			ALACC
+			PICOM
 			APPS
 			APPS_XFCE
 			PERSONA
@@ -59,6 +62,7 @@ function VERIF_DISTRIB()
 			KSUPERKEY
 			I3LOCK
 			ALACC
+			PICOM
 			APPS
 			APPS_POP
 			PERSONA
@@ -72,6 +76,7 @@ function VERIF_DISTRIB()
 			KSUPERKEY
 			I3LOCK
 			ALACC
+			PICOM
 			APPS
 			APPS_POP
 			PERSONA
@@ -104,7 +109,7 @@ declare -f BSPWM
 function BSPWM()
 	{
 			echo "#----------------------------Instalando base BSPWM-----------------------------#"
-				sudo apt install bspwm sxhkd rofi compton polybar dunst -y &&
+				sudo apt install bspwm sxhkd rofi polybar dunst -y &&
 				clear &&
 			echo "#----------------------------Base BSPWM instalada------------------------------#"
 				sleep 2s
@@ -154,6 +159,23 @@ function ALACC()
 			sudo cp /tmp/alacritty/target/release/alacritty /usr/local/bin
 			clear &&
 			echo "#----------------------------ALACRITTY habilitado------------------------------#"
+				sleep 2s
+			APPS
+	}
+
+#--Función: Base Debian - Instalar Picom (Compositor)--#
+declare -f PICOM
+function PICOM()
+	{
+			echo "#------------------------------Habilitar PICOM---------------------------------#"
+			sudo apt install gcc meson ninja-build python3 cmake pkg-config libpcre3 libxext-dev libxcb1-dev libxcb-damage0-dev libxcb-xfixes0-dev libxcb-shape0-dev libxcb-render-util0-dev libxcb-render0-dev libxcb-randr0-dev libxcb-composite0-dev libxcb-image0-dev libxcb-present-dev libxcb-xinerama0-dev libxcb-glx0-dev libpixman-1-dev libdbus-1-dev libconfig-dev libgl1-mesa-dev libpcre2-dev libevdev-dev uthash-dev libev-dev libx11-xcb-dev -y
+			git clone https://github.com/jonaburg/picom
+			cd picom
+			meson --buildtype=release . build
+			ninja -C build
+			sudo ninja -C build install
+			clear &&
+			echo "#------------------------------PICOM habilitado--------------------------------#"
 				sleep 2s
 			APPS
 	}

@@ -29,7 +29,7 @@ case $chosen in
         systemctl reboot
         ;;
     $lock)
-        xflock4
+		~/.config/bspwm/scripts/bin/xflock4
         ;;
     $suspend)
 		systemctl suspend

@@ -62,8 +62,8 @@ framerate = 60
 ; method = alsa
 ; source = hw:Loopback,1
 
-method = fifo
-source = /tmp/mpd.fifo
+method = pulse
+source = auto
 ; sample_rate = 44100
 ; sample_bits = 16
 
