@@ -20,6 +20,7 @@ function VERIF_DISTRIB()
 			KSUPERKEY
 			I3LOCK
 			ALACC
+			ZSH
 			PICOM
 			APPS
 			APPS_XFCE
@@ -34,6 +35,7 @@ function VERIF_DISTRIB()
 			KSUPERKEY
 			I3LOCK
 			ALACC
+			ZSH
 			PICOM
 			APPS
 			APPS_POP
@@ -48,6 +50,7 @@ function VERIF_DISTRIB()
 			KSUPERKEY
 			I3LOCK
 			ALACC
+			ZSH
 			PICOM
 			APPS
 			APPS_XFCE
@@ -62,6 +65,7 @@ function VERIF_DISTRIB()
 			KSUPERKEY
 			I3LOCK
 			ALACC
+			ZSH
 			PICOM
 			APPS
 			APPS_POP
@@ -76,6 +80,7 @@ function VERIF_DISTRIB()
 			KSUPERKEY
 			I3LOCK
 			ALACC
+			ZSH
 			PICOM
 			APPS
 			APPS_POP
@@ -160,9 +165,20 @@ function ALACC()
 			clear &&
 			echo "#----------------------------ALACRITTY habilitado------------------------------#"
 				sleep 2s
-			APPS
 	}
-
+	
+#--Función: Base Debian - Instalar ZSH (Terminal)--#
+declare -f ZSH
+function ZSH()
+	{
+			echo "#--------------------------------Habilitar ZSH---------------------------------#"
+			sudo apt install zsh zplug -y &&
+			chsh -s /bin/zsh &&
+			sh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
+			echo "#--------------------------------ZSH habilitado--------------------------------#"
+				sleep 2s
+	}
+	
 #--Función: Base Debian - Instalar Picom (Compositor)--#
 declare -f PICOM
 function PICOM()
@@ -178,7 +194,6 @@ function PICOM()
 			clear &&
 			echo "#------------------------------PICOM habilitado--------------------------------#"
 				sleep 2s
-			APPS
 	}
 
 #--Función: Instalar aplicaciones complementarias (base Debian)--#
@@ -186,7 +201,7 @@ declare -f APPS
 function APPS()
 	{
 			echo "#------------------------Instalar apps complementarias-------------------------#"
-			sudo apt install neofetch chromium mpd ncmpcpp thunar htop feh lxappearance geany dmenu nm-tray xfconf xsettingsd xfce4-power-manager zenity git ttf-mscorefonts-installer -y &&
+			sudo apt install neofetch chromium mpd mpc ncmpcpp cmatrix ranger xbacklight gpick light cava maim bmon nautilus htop feh lxappearance nitrogen geany dmenu nm-tray nmtui xfconf xsettingsd xfce4-power-manager zenity git ttf-mscorefonts-installer -y &&
 			clear &&
 			echo "#-----------------------Apps complementarias instaladas------------------------#"
 				sleep 2s
@@ -197,7 +212,7 @@ declare -f APPS_XFCE
 function APPS_XFCE()
 	{
 			echo "#-------------------Instalar apps complementarias para XFCE--------------------#"
-			sudo apt install thunar-archive-plugin catfish baobab meld -y &&
+			sudo apt install catfish baobab meld -y &&
 			clear &&
 			echo "#--------------------------Apps para XFCE instaladas---------------------------#"
 				sleep 2s
@@ -226,7 +241,9 @@ function PERSONA()
 				sudo cp -r /tmp/bspwm/backgrounds/* /usr/share/backgrounds
 				sudo cp -rf /tmp/bspwm/apps/Alacritty.desktop /usr/share/applications
 				sudo cp -rf /tmp/bspwm/apps/Alacritty.svg /usr/share/pixmaps
+				sudo systemctl disable mpd
 				cp -rf /tmp/bspwm/home/.config/* ~/.config
+				cp -rf /tmp/bspwm/home/.oh-my-zsh $HOME
 				cp -rf /tmp/bspwm/home/.Xresources.d $HOME
 				cp -rf /tmp/bspwm/home/.Xresources $HOME
 				cp -rf /tmp/bspwm/home/.gtkrc-2.0 $HOME
