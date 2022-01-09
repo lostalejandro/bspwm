@@ -19,6 +19,12 @@ En su terminal, ejecute el comando de abajo para iniciar la instalación:
 sudo apt install lsb-release git inxi -y && cd /tmp && git clone https://github.com/lostalejandro/bspwm && chmod 755 bspwm/* -R && cd bspwm/ && ./instalar.sh
 ```
 
+## Base ArchLinux
+En su terminal, ejecute el comando de abajo para iniciar la instalación:
+```bash
+sudo pacman -S lsb-release git --noconfirm && yay -S inxi && cd /tmp && git clone https://github.com/lostalejandro/bspwm && chmod 755 bspwm/* -R && cd bspwm/ && ./instalar.sh
+```
+
 <hr>
 
 # Sistemas soportados

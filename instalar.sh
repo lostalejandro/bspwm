@@ -100,7 +100,6 @@ function VERIF_DISTRIB()
 			BSPWM_ARCH
 			ZSH_ARCH
 			PICOM_ARCH
-			YAY_ARCH
 			APPS_ARCH
 			PERSONA
 		else	
@@ -281,24 +280,6 @@ function PICOM_ARCH()
 			sudo ninja -C build install
 			clear &&
 			echo "#------------------------------PICOM habilitado--------------------------------#"
-				sleep 2s
-	}
-
-#--Función: Base Arch - Instalar YAY (AUR)--#
-declare -f YAY_ARCH
-function YAY_ARCH()
-	{
-			echo "#-------------------------------Habilitar YAY----------------------------------#"
-			sudo pacman -S git  --noconfirm &&
-			cd /opt &&
-			sudo git clone https://aur.archlinux.org/yay-git.git &&
-			sudo chown -R tecmint:tecmint ./yay-git &&
-			cd yay-git &&
-			makepkg -si &&
-			yay -Syyuu --noconfirm &&
-			yay -Syu --devel --timeupdate --noconfirm &&
-			clear &&
-			echo "#-------------------------------YAY habilitado---------------------------------#"
 				sleep 2s
 	}
 
