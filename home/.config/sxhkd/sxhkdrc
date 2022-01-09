@@ -32,7 +32,7 @@ Print
 
 # Launch Apps
 super + {e,b,m,g}
-	{thunar,chromium,thunderbird,geany}
+	{nautilus,chromium,thunderbird,geany}
 
 # Terminal Apps
 ctrl + alt + {m,v,r,h,n,c,p}

@@ -9,7 +9,7 @@ rofi_command="rofi -theme $DIR/rofi/themes/asroot.rasi"
 
 # Apps
 terminal=" Alacritty"
-files=" Thunar"
+files=" Nautilus"
 editor=" Geany"
 clifm=" Ranger"
 mpad=" Mousepad"
@@ -26,7 +26,7 @@ case $chosen in
         apps_as_root 'alacritty --class alacritty-float,alacritty-float --config-file /root/.config/alacritty/alacritty.yml'
         ;;
     $files)
-        apps_as_root 'dbus-run-session thunar'
+        apps_as_root 'dbus-run-session nautilus'
         ;;
     $editor)
         apps_as_root 'geany'

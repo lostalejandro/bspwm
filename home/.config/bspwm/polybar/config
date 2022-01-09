@@ -50,7 +50,7 @@ font-3 = "Iosevka:style=bold:"size=12;3"
 
 modules-left = bspwm
 modules-center = title
-modules-right = mpd sep ethernet sep volume sep date
+modules-right = ethernet sep volume sep date
 
 separator =
 spacing = 0

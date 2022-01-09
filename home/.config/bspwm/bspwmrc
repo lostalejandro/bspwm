@@ -68,7 +68,7 @@ for i in ${web[@]}; do
    bspc rule -a $i desktop='^2' state=floating follow=on focus=on; done
 
 # 3 > files
-bspc rule -a Thunar desktop='^3' follow=on focus=on
+bspc rule -a Org.gnome.Nautilus desktop='^3' follow=on focus=on
 declare -a files=()
 for i in ${files[@]}; do
    bspc rule -a $i desktop='^3' state=floating follow=on focus=on; done

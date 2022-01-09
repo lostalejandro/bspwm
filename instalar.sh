@@ -16,7 +16,8 @@ function VERIF_DISTRIB()
 			sleep 2s
 			echo "#-------------------Sistema soportado, la instalación seguirá------------------#"
 			echo ""
-			ATUALIZAR
+			ACTUALIZAR
+			BSPWM
 			KSUPERKEY
 			I3LOCK
 			ALACC
@@ -31,7 +32,8 @@ function VERIF_DISTRIB()
 			sleep 2s
 			echo "#-------------------Sistema soportado, la instalación seguirá------------------#"
 			echo ""
-			ATUALIZAR
+			ACTUALIZAR
+			BSPWM
 			KSUPERKEY
 			I3LOCK
 			ALACC
@@ -46,7 +48,8 @@ function VERIF_DISTRIB()
 			sleep 2s
 			echo "#-------------------Sistema soportado, la instalación seguirá------------------#"
 			echo ""
-			ATUALIZAR
+			ACTUALIZAR
+			BSPWM
 			KSUPERKEY
 			I3LOCK
 			ALACC
@@ -61,7 +64,8 @@ function VERIF_DISTRIB()
 			sleep 2s
 			echo "#-------------------Sistema soportado, la instalación seguirá------------------#"
 			echo ""
-			ATUALIZAR
+			ACTUALIZAR
+			BSPWM
 			KSUPERKEY
 			I3LOCK
 			ALACC
@@ -76,7 +80,8 @@ function VERIF_DISTRIB()
 			sleep 2s
 			echo "#-------------------Sistema soportado, la instalación seguirá------------------#"
 			echo ""
-			ATUALIZAR
+			ACTUALIZAR
+			BSPWM
 			KSUPERKEY
 			I3LOCK
 			ALACC
@@ -85,15 +90,28 @@ function VERIF_DISTRIB()
 			APPS
 			APPS_POP
 			PERSONA
+			
+		elif [[ $INXI = *GNOME* && "Distributor ID:	Debian" && ($RELEASE = "Release:	testing" || $RELEASE = "Release:	11") ]]; then
+			inxi -S
+			sleep 2s
+			echo "#-------------------Sistema soportado, la instalación seguirá------------------#"
+			echo ""
+			ACTUALIZAR_ARCH
+			BSPWM_ARCH
+			ZSH_ARCH
+			PICOM_ARCH
+			YAY_ARCH
+			APPS_ARCH
+			PERSONA
 		else	
-			NOTF_FALHA
+			NOTF_FALLA
 			sleep 3
 	fi
 }
 
 #--Función: Actualizar sistema (base Debian)--#
-declare -f ATUALIZAR
-function ATUALIZAR(){
+declare -f ACTUALIZAR
+function ACTUALIZAR(){
 			echo "#-----------------------------Actualizar sistema-------------------------------#"
 				sudo apt update &&
 			echo "#--------------------------Repositorios actualizados---------------------------#"
@@ -106,7 +124,16 @@ function ATUALIZAR(){
 				clear &&
 			echo "#-----------------------------Sistema actualizado------------------------------#"
 				sleep 2s
-			BSPWM
+		}
+
+#--Función: Actualizar sistema (base Arch)--#
+declare -f ACTUALIZAR_ARCH
+function ACTUALIZAR(){
+			echo "#-----------------------------Actualizar sistema-------------------------------#"
+				sudo pacman -Syyuu --noconfirm &&
+				clear &&
+			echo "#-----------------------------Sistema actualizado------------------------------#"
+				sleep 2s
 		}
 			
 #--Función: Instalar base BSPWM (base Debian)--#
@@ -120,12 +147,24 @@ function BSPWM()
 				sleep 2s
 	}
 
+#--Función: Instalar base BSPWM (base Arch)--#
+declare -f BSPWM_ARCH
+function BSPWM_ARCH()
+	{
+			echo "#----------------------------Instalando base BSPWM-----------------------------#"
+				sudo pacman -S bspwm sxhkd rofi dunst --noconfirm &&
+				yay -S polybar ksuperkey --noconfirm &&
+				clear &&
+			echo "#----------------------------Base BSPWM instalada------------------------------#"
+				sleep 2s
+	}
+
 #--Función: Base Debian - Instalar ksuperkey (hacer posible llamar a rofi con la tecla super)--#
 declare -f KSUPERKEY
 function KSUPERKEY()
 	{
 			echo "#-----------------------------Habilitar KSUPERKEY------------------------------#"
-			sudo apt install gcc make libx11-dev libxtst-dev pkg-config -y
+			sudo apt install gcc make libx11-dev libxtst-dev pkg-config -y &&
 			cd /tmp && git clone https://github.com/hanschen/ksuperkey.git
 			cd ksuperkey
 			make
@@ -161,7 +200,11 @@ function ALACC()
 			git clone https://github.com/alacritty/alacritty.git &&
 			cd /tmp/alacritty
 			cargo build --release
-			sudo cp /tmp/alacritty/target/release/alacritty /usr/local/bin
+			sudo cp /tmp/alacritty/target/release/alacritty /usr/local/bin && 
+			cd &&
+			cd /tmp/bspwm &&
+			sudo cp -rf /tmp/bspwm/apps/Alacritty.desktop /usr/share/applications
+			sudo cp -rf /tmp/bspwm/apps/Alacritty.svg /usr/share/pixmaps
 			clear &&
 			echo "#----------------------------ALACRITTY habilitado------------------------------#"
 				sleep 2s
@@ -173,8 +216,36 @@ function ZSH()
 	{
 			echo "#--------------------------------Habilitar ZSH---------------------------------#"
 			sudo apt install zsh zplug -y &&
-			chsh -s /bin/zsh &&
-			sh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
+			chsh -s $(which zsh) &&
+			sh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)" &&
+			git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k &&
+			git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting &&
+			git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions &&
+			cd &&
+			cp -rf /tmp/bspwm/home/.zshrc $HOME
+			cp -rf /tmp/bspwm/home/.zshenv $HOME
+			cp -rf /tmp/bspwm/home/.p10k.zsh $HOME
+			clear &&
+			echo "#--------------------------------ZSH habilitado--------------------------------#"
+				sleep 2s
+	}
+	
+#--Función: Base Arch - Instalar ZSH (Terminal)--#
+declare -f ZSH_ARCH
+function ZSH_ARCH()
+	{
+			echo "#--------------------------------Habilitar ZSH---------------------------------#"
+			sudo pacman -S zsh zplug -y &&
+			chsh -s $(which zsh) &&
+			sh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)" &&
+			git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k &&
+			git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting &&
+			git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions &&
+			cd &&
+			cp -rf /tmp/bspwm/home/.zshrc $HOME
+			cp -rf /tmp/bspwm/home/.zshenv $HOME
+			cp -rf /tmp/bspwm/home/.p10k.zsh $HOME
+			clear &&
 			echo "#--------------------------------ZSH habilitado--------------------------------#"
 				sleep 2s
 	}
@@ -184,7 +255,7 @@ declare -f PICOM
 function PICOM()
 	{
 			echo "#------------------------------Habilitar PICOM---------------------------------#"
-			sudo apt install gcc meson ninja-build python3 cmake pkg-config libpcre3 libxext-dev libxcb1-dev libxcb-damage0-dev libxcb-xfixes0-dev libxcb-shape0-dev libxcb-render-util0-dev libxcb-render0-dev libxcb-randr0-dev libxcb-composite0-dev libxcb-image0-dev libxcb-present-dev libxcb-xinerama0-dev libxcb-glx0-dev libpixman-1-dev libdbus-1-dev libconfig-dev libgl1-mesa-dev libpcre2-dev libevdev-dev uthash-dev libev-dev libx11-xcb-dev -y
+			sudo apt install gcc meson ninja-build python3 cmake pkg-config libpcre3 libxext-dev libxcb1-dev libxcb-damage0-dev libxcb-xfixes0-dev libxcb-shape0-dev libxcb-render-util0-dev libxcb-render0-dev libxcb-randr0-dev libxcb-composite0-dev libxcb-image0-dev libxcb-present-dev libxcb-xinerama0-dev libxcb-glx0-dev libpixman-1-dev libdbus-1-dev libconfig-dev libgl1-mesa-dev libpcre2-dev libevdev-dev uthash-dev libev-dev libx11-xcb-dev -y &&
 			cd /tmp
 			git clone https://github.com/jonaburg/picom
 			cd picom
@@ -196,12 +267,61 @@ function PICOM()
 				sleep 2s
 	}
 
+#--Función: Base Arch - Instalar Picom (Compositor)--#
+declare -f PICOM_ARCH
+function PICOM_ARCH()
+	{
+			echo "#------------------------------Habilitar PICOM---------------------------------#"
+			sudo pacman -S gcc meson ninja-build python3 cmake pkg-config libpcre3 libxext-dev libxcb1-dev libxcb-damage0-dev libxcb-xfixes0-dev libxcb-shape0-dev libxcb-render-util0-dev libxcb-render0-dev libxcb-randr0-dev libxcb-composite0-dev libxcb-image0-dev libxcb-present-dev libxcb-xinerama0-dev libxcb-glx0-dev libpixman-1-dev libdbus-1-dev libconfig-dev libgl1-mesa-dev libpcre2-dev libevdev-dev uthash-dev libev-dev libx11-xcb-dev --noconfirm &&
+			cd /tmp
+			git clone https://github.com/jonaburg/picom
+			cd picom
+			meson --buildtype=release . build
+			ninja -C build
+			sudo ninja -C build install
+			clear &&
+			echo "#------------------------------PICOM habilitado--------------------------------#"
+				sleep 2s
+	}
+
+#--Función: Base Arch - Instalar YAY (AUR)--#
+declare -f YAY_ARCH
+function YAY_ARCH()
+	{
+			echo "#-------------------------------Habilitar YAY----------------------------------#"
+			sudo pacman -S git  --noconfirm &&
+			cd /opt &&
+			sudo git clone https://aur.archlinux.org/yay-git.git &&
+			sudo chown -R tecmint:tecmint ./yay-git &&
+			cd yay-git &&
+			makepkg -si &&
+			yay -Syyuu --noconfirm &&
+			yay -Syu --devel --timeupdate --noconfirm &&
+			clear &&
+			echo "#-------------------------------YAY habilitado---------------------------------#"
+				sleep 2s
+	}
+
 #--Función: Instalar aplicaciones complementarias (base Debian)--#
 declare -f APPS
 function APPS()
 	{
 			echo "#------------------------Instalar apps complementarias-------------------------#"
-			sudo apt install neofetch chromium mpd mpc ncmpcpp cmatrix ranger xbacklight gpick light cava maim bmon nautilus htop feh lxappearance nitrogen geany dmenu nm-tray nmtui xfconf xsettingsd xfce4-power-manager zenity git ttf-mscorefonts-installer -y &&
+			sudo apt install neofetch chromium mousepad mpd mpc ncmpcpp cmatrix ranger xbacklight gpick light cava maim bmon nautilus htop feh lxappearance nitrogen geany dmenu nm-tray nmtui xfconf xsettingsd xfce4-power-manager zenity git ttf-mscorefonts-installer -y &&
+			sudo systemctl disable mpd &&
+			clear &&
+			echo "#-----------------------Apps complementarias instaladas------------------------#"
+				sleep 2s
+	}
+
+#--Función: Instalar aplicaciones complementarias (base Arch)--#
+declare -f APPS_ARCH
+function APPS_ARCH()
+	{
+			echo "#------------------------Instalar apps complementarias-------------------------#"
+			sudo pacman -S alacritty zsh neofetch mousepad chromium mpd mpc ncmpcpp cmatrix ranger xorg-xbacklight gpick light maim bmon nautilus htop feh lxappearance nitrogen geany dmenu networkmanager xfconf xsettingsd xfce4-power-manager zenity git --noconfirm &&
+			yay -S i3lock-color ttf-ms-fonts cava nm-tray --noconfirm &&
+			sudo systemctl disable mpd &&
 			clear &&
 			echo "#-----------------------Apps complementarias instaladas------------------------#"
 				sleep 2s
@@ -239,19 +359,12 @@ function PERSONA()
 				sudo cp -r /tmp/bspwm/icons/* /usr/share/icons
 				sudo cp -r /tmp/bspwm/themes/* /usr/share/themes
 				sudo cp -r /tmp/bspwm/backgrounds/* /usr/share/backgrounds
-				sudo cp -rf /tmp/bspwm/apps/Alacritty.desktop /usr/share/applications
-				sudo cp -rf /tmp/bspwm/apps/Alacritty.svg /usr/share/pixmaps
-				sudo systemctl disable mpd
 				cp -rf /tmp/bspwm/home/.config/* ~/.config
-				cp -rf /tmp/bspwm/home/.oh-my-zsh $HOME
 				cp -rf /tmp/bspwm/home/.Xresources.d $HOME
 				cp -rf /tmp/bspwm/home/.Xresources $HOME
 				cp -rf /tmp/bspwm/home/.gtkrc-2.0 $HOME
 				cp -rf /tmp/bspwm/home/.xsettingsd $HOME
 				cp -rf /tmp/bspwm/home/.dmrc $HOME
-				cp -rf /tmp/bspwm/home/.zshrc $HOME
-				cp -rf /tmp/bspwm/home/.zshenv $HOME
-				cp -rf /tmp/bspwm/home/.p10k.zsh $HOME
 				cp -rf /tmp/bspwm/home/.fehbg $HOME
 				
 			clear &&
@@ -269,8 +382,8 @@ function NOTF_SUCESS()
 	}
 	
 #--Función: Notificar Falha na operação--#
-declare -f NOTF_FALHA
-function NOTF_FALHA()
+declare -f NOTF_FALLA
+function NOTF_FALLA()
 	{
 		clear
 			echo "#----------------------------Sistema no soportado------------------------------#"
@@ -278,6 +391,7 @@ function NOTF_FALHA()
 			echo "#------------------Debian Bullseye o Bookworm (XFCE y GNOME)-------------------#"
 			echo "#-------------------------------Pop!_Os 21.10----------------------------------#"
 			echo "#---------------------------Ubuntu o Xubuntu 21.10-----------------------------#"
+			echo "#-----------------------------------ArchLinux----------------------------------#"
 			echo "#-En caso que esté usando- una de las mencionadas, debe tener 'inxi' instalado-#"
 	}
 		
