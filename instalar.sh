@@ -91,7 +91,7 @@ function VERIF_DISTRIB()
 			APPS_POP
 			PERSONA
 			
-		elif [[ $INXI = *Arch*]]; then
+		elif [[ $INXI = *Arch* ]]; then
 			inxi -S
 			sleep 2s
 			echo "#-------------------Sistema soportado, la instalación seguirá------------------#"
@@ -235,7 +235,7 @@ declare -f ZSH_ARCH
 function ZSH_ARCH()
 	{
 			echo "#--------------------------------Habilitar ZSH---------------------------------#"
-			sudo pacman -S zsh zplug -y &&
+			sudo pacman -S zsh --noconfirm &&
 			chsh -s $(which zsh) &&
 			sh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)" &&
 			git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k &&
