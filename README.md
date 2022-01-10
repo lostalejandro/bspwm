@@ -13,14 +13,14 @@
 
 # Instalación
 
-## Base Debian (Debian, Pop!_OS, Ubuntu y Xubuntu)
 En su terminal, ejecute el comando de abajo para iniciar la instalación:
+
+## Base Debian (Debian, Pop!_OS, Ubuntu y Xubuntu)
 ```bash
 sudo apt install lsb-release git inxi -y && cd /tmp && git clone https://github.com/lostalejandro/bspwm && chmod 755 bspwm/* -R && cd bspwm/ && ./instalar.sh
 ```
 
 ## Base ArchLinux
-En su terminal, ejecute el comando de abajo para iniciar la instalación:
 ```bash
 sudo pacman -S lsb-release git --noconfirm && yay -S inxi && cd /tmp && git clone https://github.com/lostalejandro/bspwm && chmod 755 bspwm/* -R && cd bspwm/ && ./instalar.sh
 ```
@@ -53,6 +53,9 @@ Para que el script se ejecute correctamente, es necesario tener sistema, versió
      <tr>
         <td align="center"valign="center">Xubuntu</td>
         <td align="center"valign="center">XFCE</td>
+    </tr>
+    <tr>
+        <td align="center"valign="center">ArchLinux</td>
     </tr>
 </table>
 

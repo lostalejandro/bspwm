@@ -91,7 +91,7 @@ function VERIF_DISTRIB()
 			APPS_POP
 			PERSONA
 			
-		elif [[ $INXI = *GNOME* && "Distributor ID:	Debian" && ($RELEASE = "Release:	testing" || $RELEASE = "Release:	11") ]]; then
+		elif [[ $INXI = "Distro: Arch Linux"]]; then
 			inxi -S
 			sleep 2s
 			echo "#-------------------Sistema soportado, la instalación seguirá------------------#"
