@@ -272,7 +272,7 @@ declare -f PICOM_ARCH
 function PICOM_ARCH()
 	{
 			echo "#------------------------------Habilitar PICOM---------------------------------#"
-			yay -S picom-jonaburg-git
+			yay -S picom-jonaburg-git --noconfirm &&
 			clear &&
 			echo "#------------------------------PICOM habilitado--------------------------------#"
 				sleep 2s
