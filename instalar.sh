@@ -170,7 +170,7 @@ function KSUPERKEY()
 			make
 			sudo make install &&
 			clear &&
-			echo "#----------------------------KSUEPRKEY habilitado------------------------------#"
+			echo "#----------------------------KSUPERKEY habilitado------------------------------#"
 				sleep 2s
 	}
 	
@@ -223,7 +223,6 @@ function ZSH()
 			git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions &&
 			cd &&
 			cp -rf /tmp/bspwm/home/.zshrc $HOME
-			cp -rf /tmp/bspwm/home/.zshenv $HOME
 			cp -rf /tmp/bspwm/home/.p10k.zsh $HOME
 			clear &&
 			echo "#--------------------------------ZSH habilitado--------------------------------#"
@@ -280,7 +279,7 @@ declare -f APPS
 function APPS()
 	{
 			echo "#------------------------Instalar apps complementarias-------------------------#"
-			sudo apt install neofetch chromium mousepad mpd mpc ncmpcpp cmatrix ranger xbacklight gpick light cava maim bmon nautilus htop feh lxappearance nitrogen geany dmenu nm-tray nmtui xfconf xsettingsd xfce4-power-manager zenity git ttf-mscorefonts-installer -y &&
+			sudo apt install neofetch mousepad mpd mpc ncmpcpp cmatrix ranger xbacklight gpick light cava maim bmon nautilus htop feh lxappearance nitrogen geany dmenu nm-tray xfconf xsettingsd xfce4-power-manager zenity git ttf-mscorefonts-installer -y &&
 			sudo systemctl disable mpd &&
 			clear &&
 			echo "#-----------------------Apps complementarias instaladas------------------------#"
