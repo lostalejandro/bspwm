@@ -52,7 +52,12 @@ else
 fi
 
 # Variable passed to rofi
-options="$toggle\n$button_stop\n$button_previous\n$button_next\n$tog_repeat\n$tog_random"
+options="$toggle
+$button_stop
+$button_previous
+$button_next
+$tog_repeat
+$tog_random"
 
 # Get the current playing song
 current=$(mpc current)

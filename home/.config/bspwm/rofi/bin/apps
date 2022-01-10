@@ -38,7 +38,34 @@ unix="Unix"
 zwaves="Zwaves"
 
 # Variable passed to rofi
-options="$animals\n$bonsai\n$colorbar\n$colorblocks\n$colortest\n$colorwheel\n$crunch\n$crunchbang\n$dna\n$emwave\n$faces\n$fade\n$ghosts\n$hedgehogs\n$illumina\n$invaders\n$mouseface\n$panes\n$pipes\n$pipes3d\n$railcars\n$rallyx\n$square\n$tanks\n$testfonts\n$tiefighter\n$unix\n$zwaves"
+options="$animals
+$bonsai
+$colorbar
+$colorblocks
+$colortest
+$colorwheel
+$crunch
+$crunchbang
+$dna
+$emwave
+$faces
+$fade
+$ghosts
+$hedgehogs
+$illumina
+$invaders
+$mouseface
+$panes
+$pipes
+$pipes3d
+$railcars
+$rallyx
+$square
+$tanks
+$testfonts
+$tiefighter
+$unix
+$zwaves"
 
 # Functions
 

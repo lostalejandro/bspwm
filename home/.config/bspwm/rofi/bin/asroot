@@ -16,7 +16,12 @@ mpad=" Mousepad"
 vim=" Vim"
 
 # Variable passed to rofi
-options="$terminal\n$files\n$editor\n$clifm\n$mpad\n$vim"
+options="$terminal
+$files
+$editor
+$clifm
+$mpad
+$vim"
 
 # Functions
 

@@ -40,7 +40,10 @@ bmon=""
 launch_cli=""
 launch=""
 
-options="$connected\n$bmon\n$launch_cli\n$launch"
+options="$connected
+$bmon
+$launch_cli
+$launch"
 
 ## Main
 chosen="$(echo "$options" | $rofi_command -p "$SSID : $PIP" -dmenu $active $urgent -selected-row 1)"

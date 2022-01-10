@@ -64,7 +64,11 @@ if [[ ! -d "$dir" ]]; then
 fi
 
 # Variable passed to rofi
-options="$screen\n$area\n$window\n$infive\n$inten"
+options="$screen
+$area
+$window
+$infive
+$inten"
 
 chosen="$(echo "$options" | $rofi_command -p 'Captura de Pantalla' -dmenu -selected-row 0)"
 case $chosen in

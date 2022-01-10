@@ -17,7 +17,11 @@ suspend=""
 logout=""
 
 # Variable passed to rofi
-options="$shutdown\n$reboot\n$lock\n$suspend\n$logout"
+options="$shutdown
+$reboot
+$lock
+$suspend
+$logout"
 #_msg="Options  -  yes / y / no / n"
 
 chosen="$(echo "$options" | $rofi_command -p "Tiempo encendido - $uptime" -dmenu -selected-row 2)"
