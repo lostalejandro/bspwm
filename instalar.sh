@@ -91,7 +91,7 @@ function VERIF_DISTRIB()
 			APPS_POP
 			PERSONA
 			
-		elif [[ $INXI = "Distro: Arch Linux"]]; then
+		elif [[ $INXI = *Arch*]]; then
 			inxi -S
 			sleep 2s
 			echo "#-------------------Sistema soportado, la instalación seguirá------------------#"
@@ -102,6 +102,7 @@ function VERIF_DISTRIB()
 			PICOM_ARCH
 			APPS_ARCH
 			PERSONA
+			
 		else	
 			NOTF_FALLA
 			sleep 3
@@ -127,7 +128,7 @@ function ACTUALIZAR(){
 
 #--Función: Actualizar sistema (base Arch)--#
 declare -f ACTUALIZAR_ARCH
-function ACTUALIZAR(){
+function ACTUALIZAR_ARCH(){
 			echo "#-----------------------------Actualizar sistema-------------------------------#"
 				sudo pacman -Syyuu --noconfirm &&
 				clear &&
