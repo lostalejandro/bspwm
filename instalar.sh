@@ -141,7 +141,7 @@ declare -f BSPWM
 function BSPWM()
 	{
 			echo "#----------------------------Instalando base BSPWM-----------------------------#"
-				sudo apt install bspwm sxhkd rofi polybar dunst -y &&
+				sudo apt install bspwm sxhkd rofi polybar dunst arandr -y &&
 				clear &&
 			echo "#----------------------------Base BSPWM instalada------------------------------#"
 				sleep 2s
@@ -152,8 +152,8 @@ declare -f BSPWM_ARCH
 function BSPWM_ARCH()
 	{
 			echo "#----------------------------Instalando base BSPWM-----------------------------#"
-				sudo pacman -S bspwm sxhkd rofi dunst --noconfirm &&
-				yay -S polybar ksuperkey --noconfirm &&
+				sudo pacman -S bspwm sxhkd rofi dunst xorg-xsetroot arandr --noconfirm &&
+				yay -S polybar --noconfirm &&
 				clear &&
 			echo "#----------------------------Base BSPWM instalada------------------------------#"
 				sleep 2s
@@ -238,12 +238,9 @@ function ZSH_ARCH()
 			sudo pacman -S zsh cargo --noconfirm &&
 			chsh -s $(which zsh) &&
 			sh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)" &&
-			git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k &&
-			git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting &&
-			git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions &&
 			cd &&
+			yay -S zsh-autosuggestions zsh-completions zsh-syntax-highlighting zsh-theme-powerlevel10k --noconfirm &&
 			cp -rf /tmp/bspwm/home/.zshrc $HOME
-			cp -rf /tmp/bspwm/home/.zshenv $HOME
 			cp -rf /tmp/bspwm/home/.p10k.zsh $HOME
 			clear &&
 			echo "#--------------------------------ZSH habilitado--------------------------------#"
