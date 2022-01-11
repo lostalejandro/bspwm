@@ -292,7 +292,7 @@ function APPS_ARCH()
 	{
 			echo "#------------------------Instalar apps complementarias-------------------------#"
 			sudo pacman -S alacritty zsh neofetch mousepad chromium mpd mpc ncmpcpp cmatrix ranger xorg-xbacklight gpick light maim bmon nautilus htop feh lxappearance nitrogen geany dmenu networkmanager xfconf xsettingsd xfce4-power-manager zenity git --noconfirm &&
-			yay -S i3lock-color ttf-ms-fonts cava nm-tray --noconfirm &&
+			yay -S i3lock-color ttf-ms-fonts cava nm-tray networkmanager-demnu-git --noconfirm &&
 			sudo systemctl disable mpd &&
 			clear &&
 			echo "#-----------------------Apps complementarias instaladas------------------------#"
