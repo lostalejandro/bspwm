@@ -1,9 +1,9 @@
 ## Copyright (C) 2020-2021 Aditya Shakya <adi1090x@gmail.com>
 ## Everyone is permitted to copy and distribute copies of this file under GNU-GPL3
 
-Net/ThemeName "Nordic"
-Net/IconThemeName "Nordic-Folders"
-Gtk/CursorThemeName "Qogirr-dark"
+Net/ThemeName "Manhattan"
+Net/IconThemeName "Luv-Folders-Dark"
+Gtk/CursorThemeName "Vimix-dark"
 Net/EnableEventSounds "0"
 Net/EnableInputFeedbackSounds "0"
 Xft/DPI "-1"

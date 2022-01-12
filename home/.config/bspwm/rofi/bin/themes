@@ -54,63 +54,63 @@ $theme_20"
 chosen="$(echo "$options" | $rofi_command -p "Temas disponibles: (20)" -dmenu -selected-row 0)"
 case $chosen in
     $theme_1)
-        bash ${BSP}/set-theme  'beach.jpg' 'beach' 'Arc-Lighter' 'Arc-Circle' 'Fluent'
+        bash ${BSP}/set-theme  'beach.jpg' 'beach' 'Arc-Lighter' 'Arc-Circle' 'Fluent' 'beach.conf'
         ;;
     $theme_2)
-        bash ${BSP}/set-theme  'blade.jpg' 'blade' 'Blade' 'Nordic-Folders' 'LyraS'
+        bash ${BSP}/set-theme  'blade.jpg' 'blade' 'Blade' 'Nordic-Folders' 'LyraS' 'himbeere.conf'
         ;;
     $theme_3)
-        bash ${BSP}/set-theme  'bouquet.jpg' 'bouquet' 'Juno-mirage' 'Luna-Dark' 'Future-dark'
+        bash ${BSP}/set-theme  'bouquet.jpg' 'bouquet' 'Juno-mirage' 'Luna-Dark' 'Future-dark' 'bouquet.conf'
         ;;
     $theme_4)
-        bash ${BSP}/set-theme  'cyberpunk.jpg' 'cyberpunk' 'Cyberpunk' 'Archcraft-Dark' 'LyraB'
+        bash ${BSP}/set-theme  'cyberpunk.jpg' 'cyberpunk' 'Cyberpunk' 'Archcraft-Dark' 'LyraB' 'delt-dark.conf'
         ;;
     $theme_5)
-        bash ${BSP}/set-theme  'dracula.png' 'dracula' 'Dracula' 'Nordic-Folders' 'Sweet'
+        bash ${BSP}/set-theme  'dracula.png' 'dracula' 'Dracula' 'Nordic-Folders' 'Sweet' 'inkpot.conf'
         ;;
     $theme_6)
-        bash ${BSP}/set-theme  'flowers.jpg' 'flowers' 'Kripton' 'Zafiro' 'Fluent-dark'
+        bash ${BSP}/set-theme  'flowers.jpg' 'flowers' 'Kripton' 'Zafiro' 'Fluent-dark' 'spider-dark.conf'
         ;;
     $theme_7)
-        bash ${BSP}/set-theme  'forest.jpg' 'forest' 'Adapta-Nokto' 'Luv-Folders-Dark' 'Vimix'
+        bash ${BSP}/set-theme  'forest.jpg' 'forest' 'Adapta-Nokto' 'Luv-Folders-Dark' 'Vimix' 'adapta.conf'
         ;;
     $theme_8)
-        bash ${BSP}/set-theme  'groot.jpg' 'groot' 'Groot' 'Luna-Dark' 'Pear'
+        bash ${BSP}/set-theme  'groot.jpg' 'groot' 'Groot' 'Luna-Dark' 'Pear' 'bespin.conf'
         ;;
     $theme_9)
-        bash ${BSP}/set-theme  'gruvbox.jpg' 'gruvbox' 'Gruvbox' 'Luna-Dark' 'Future-dark'
+        bash ${BSP}/set-theme  'gruvbox.jpg' 'gruvbox' 'Gruvbox' 'Luna-Dark' 'Future-dark' 'monokai.conf'
         ;;
     $theme_10)
-        bash ${BSP}/set-theme  'hack.jpg' 'hack' 'Hack' 'Hack' 'LyraB'
+        bash ${BSP}/set-theme  'hack.jpg' 'hack' 'Hack' 'Hack' 'LyraB' 'hack.conf'
         ;;
     $theme_11)
-        bash ${BSP}/set-theme  'keyboards.jpg' 'keyboards' 'Sweet-Dark' 'Zafiro-Purple' 'Sweet'
+        bash ${BSP}/set-theme  'keyboards.jpg' 'keyboards' 'Sweet-Dark' 'Zafiro-Purple' 'Sweet' 'keyboards.conf'
         ;;
     $theme_12)
-        bash ${BSP}/set-theme  'light.jpg' 'light' 'White' 'Arc-Circle' 'Fluent-dark'
+        bash ${BSP}/set-theme  'light.jpg' 'light' 'White' 'Arc-Circle' 'Fluent-dark' 'eleven.conf'
         ;;
     $theme_13)
-        bash ${BSP}/set-theme  'manhattan.jpg' 'manhattan' 'Manhattan' 'Luv-Folders-Dark' 'Vimix-dark'
+        bash ${BSP}/set-theme  'manhattan.jpg' 'manhattan' 'Manhattan' 'Luv-Folders-Dark' 'Vimix-dark' 'manhattan.conf'
         ;;
     $theme_14)
-        bash ${BSP}/set-theme  'nord.jpg' 'nord' 'Arc-Dark' 'Arc-Circle' 'Qogirr'
+        bash ${BSP}/set-theme  'nord.jpg' 'nord' 'Arc-Dark' 'Arc-Circle' 'Qogirr' 'nordic.conf'
         ;;
     $theme_15)
-        bash ${BSP}/set-theme  'nordic.jpg' 'nord' 'Nordic' 'Nordic-Folders' 'Qogirr-dark'
+        bash ${BSP}/set-theme  'nordic.jpg' 'nord' 'Nordic' 'Nordic-Folders' 'Qogirr-dark' 'nordic.conf'
         ;;
     $theme_16)
-        bash ${BSP}/set-theme  'pastel.png' 'pastel' 'White' 'Qogir' 'Qogirr-dark'
+        bash ${BSP}/set-theme  'pastel.png' 'pastel' 'White' 'Qogir' 'Qogirr-dark' 'fluffy.conf'
         ;;
     $theme_17)
-        bash ${BSP}/set-theme  'rick.jpg' 'rick' 'Rick' 'Zafiro' 'Vimix-dark'
+        bash ${BSP}/set-theme  'rick.jpg' 'rick' 'Rick' 'Zafiro' 'Vimix-dark' 'sleepy-pastel.conf'
         ;;
     $theme_18)
-        bash ${BSP}/set-theme  'spark.jpg' 'spark' 'Spark' 'Luv-Folders' 'Vimix'
+        bash ${BSP}/set-theme  'spark.jpg' 'spark' 'Spark' 'Luv-Folders' 'Vimix' 'spark.conf'
         ;;
     $theme_19)
-        bash ${BSP}/set-theme  'tealize.png' 'tealize' 'Juno-palenight' 'Luv-Folders-Dark' 'Vimix'
+        bash ${BSP}/set-theme  'tealize.png' 'tealize' 'Juno-palenight' 'Luv-Folders-Dark' 'Vimix' 'tealize.conf'
         ;;
     $theme_20)
-        bash ${BSP}/set-theme  'wave.jpg' 'wave' 'Wave' 'Luv-Folders-Dark' 'Vimix'
+        bash ${BSP}/set-theme  'wave.jpg' 'wave' 'Wave' 'Luv-Folders-Dark' 'Vimix' 'wave.conf'
         ;;
 esac
